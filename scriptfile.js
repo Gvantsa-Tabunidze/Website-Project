@@ -125,12 +125,3 @@ let accHolder = document
       }
     });
   });
-
-
-
-
-
-
-
-
-
