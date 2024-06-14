@@ -142,9 +142,9 @@ function getEmployeeInfo(page) {
   })
     .then(function (responseInfo) {
       console.log(responseInfo);
-      // if (!responseInfo.status.ok) {
-      //   throw 'error';
-      // }
+      if (!responseInfo.ok) {
+        throw 'error';
+      }
       return responseInfo.json();
     })
     .then(function (newData) {
