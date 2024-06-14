@@ -128,6 +128,12 @@ let accordionlist = document
     });
   });
 
+
+
+
+
+
+
 // Geeting data from server
 
 let ulElement = document.getElementById('ul-element');
@@ -137,14 +143,14 @@ let btnPrev = document.getElementById('prevButton');
 let btnNext = document.getElementById('nextButton');
 
 function getEmployeeInfo(page) {
-  fetch('https://reqres.in/api/users?page=2', {
+  fetch('https://reqres.in/api/users?page=1', {
     method: 'GET',
   })
     .then(function (responseInfo) {
       console.log(responseInfo);
-      if (!responseInfo.status.ok) {
-        throw 'error';
-      }
+      // if (!responseInfo.status.ok) {
+      //   throw 'error';
+      // }
       return responseInfo.json();
     })
     .then(function (newData) {
