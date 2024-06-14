@@ -1,3 +1,5 @@
+'use strict';
+
 // Home work 6:
 
 let burger = document.querySelector('.burger');
@@ -63,7 +65,7 @@ formEl.addEventListener('submit', function (event) {
   let userInputValue = input.value;
 
   if (userInputValue === '') {
-    return userInputValue;
+    return;
   }
 
   let liElement = document.createElement('li');
@@ -112,16 +114,64 @@ topScroll.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
 document.querySelector('.btn-target-container').appendChild(topScroll);
 
 topScroll.addEventListener('click', function () {
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 });
 
-let accHolder = document
-  .querySelectorAll('.acc-item-holder')
+let accordionlist = document
+  .querySelectorAll('.acc-list-item')
   .forEach(function (element) {
     element.addEventListener('click', function () {
       this.classList.toggle('unfold');
-      if (!'unfold') {
-        this.classList.toggle('unfold');
-      }
     });
   });
+
+// Geeting data from server
+
+let ulElement = document.getElementById('ul-element');
+let currentPage = 1;
+let totalPages;
+let btnPrev = document.getElementById('prevButton');
+let btnNext = document.getElementById('nextButton');
+
+function getEmployeeInfo(page) {
+  fetch('https://reqres.in/api/users?page=2', {
+    method: 'GET',
+  })
+    .then(function (responseInfo) {
+      console.log(responseInfo);
+      if (!responseInfo.status.ok) {
+        throw 'error';
+      }
+      return responseInfo.json();
+    })
+    .then(function (newData) {
+      console.log(newData);
+
+      newData.data.forEach((element) => {
+        let li = document.createElement('li');
+        let img = document.createElement('img');
+        img.src = element.avatar;
+        let pElement = document.createElement('p');
+        pElement.innerText = `${element.first_name} ${element.last_name}`;
+        li.appendChild(img);
+        li.appendChild(pElement);
+        ulElement.appendChild(li);
+      });
+    })
+
+    .catch(function (error) {
+      if (error === 404) {
+        let pError = document.createElement('p');
+        pError.innerText = 'Page not found';
+      } else {
+        let pError = document.createElement('p');
+        pError.innerText = 'Server Error';
+      }
+    });
+}
+
+getEmployeeInfo();
+
