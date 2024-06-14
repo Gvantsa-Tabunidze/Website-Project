@@ -128,12 +128,6 @@ let accordionlist = document
     });
   });
 
-
-
-
-
-
-
 // Geeting data from server
 
 let ulElement = document.getElementById('ul-element');
@@ -143,7 +137,7 @@ let btnPrev = document.getElementById('prevButton');
 let btnNext = document.getElementById('nextButton');
 
 function getEmployeeInfo(page) {
-  fetch('https://reqres.in/api/users?page=1', {
+  fetch('https://reqres.in/api/users?page=' + page, {
     method: 'GET',
   })
     .then(function (responseInfo) {
@@ -155,6 +149,7 @@ function getEmployeeInfo(page) {
     })
     .then(function (newData) {
       console.log(newData);
+      const fragment = new DocumentFragment();
 
       newData.data.forEach((element) => {
         let li = document.createElement('li');
@@ -164,8 +159,13 @@ function getEmployeeInfo(page) {
         pElement.innerText = `${element.first_name} ${element.last_name}`;
         li.appendChild(img);
         li.appendChild(pElement);
-        ulElement.appendChild(li);
+        fragment.appendChild(li);
       });
+      ulElement.innerHTML = '';
+      ulElement.appendChild(fragment);
+
+      totalPages = newData.total_pages;
+
     })
 
     .catch(function (error) {
@@ -179,5 +179,44 @@ function getEmployeeInfo(page) {
     });
 }
 
-getEmployeeInfo();
+function btnFnc() {
+  if (currentPage ===1 ) {
+    btnPrev.disabled = true;
+  } else {
+    btnPrev.disabled = false;
+  }
+
+  if(currentPage===totalPages) {
+    btnNext.disabled = true;
+  } else {
+    btnNext.disabled = false;
+  }
+}
+
+
+btnPrev.addEventListener('click', function () {
+  if (currentPage === 1) {
+    return;
+  }
+  currentPage--;
+  getEmployeeInfo(currentPage);
+  btnFnc();
+});
+
+btnNext.addEventListener('click', function () {
+  if (currentPage === totalPages) {
+    return;
+  }
+  currentPage++;
+  getEmployeeInfo(currentPage);
+  btnFnc();
+});
+
+
+
+getEmployeeInfo(currentPage);
+
+
+
+// Posts
 

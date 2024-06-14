@@ -97,9 +97,12 @@ h2 {
 }
 
 .user-info {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
   min-height: 100px;
-  padding-right: 50px;
+  
  
 }
 
@@ -118,16 +121,36 @@ button {
   cursor: pointer;
 }
 
+button {
+  &:disabled{
+    opacity: 50%;
+    cursor: not-allowed;
+  }
+}
+
+
+
 .pagination-wrapper {
   margin: 25px;
 }
 
 
+
 #ul-element {
   min-height: 100px;
-  background-color: #f9ca24;
+  display: flex;
+  flex-wrap: wrap;
+  gap:24px;
+  width: fit-content;
+  justify-content: center;
+  
 }
 
+li {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .Honey-list-container{
   display: flex;
   width: 100%;
