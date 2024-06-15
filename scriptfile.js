@@ -167,7 +167,7 @@ function getEmployeeInfo(page) {
       totalPages = newData.total_pages;
 
       if (currentPage === 1) {
-        btnPrev.disabled=true;
+        btnPrev.disabled = true;
       }
     })
 
@@ -183,19 +183,18 @@ function getEmployeeInfo(page) {
 }
 
 function btnFnc() {
-  if (currentPage ===1 ) {
+  if (currentPage === 1) {
     btnPrev.disabled = true;
   } else {
     btnPrev.disabled = false;
   }
 
-  if(currentPage===totalPages) {
+  if (currentPage === totalPages) {
     btnNext.disabled = true;
   } else {
     btnNext.disabled = false;
   }
 }
-
 
 btnPrev.addEventListener('click', function () {
   if (currentPage === 1) {
@@ -223,9 +222,12 @@ getEmployeeInfo(currentPage);
 let mainDiv = document.getElementById('post-wrapper');
 let overflowDiv = document.querySelector('.overflow');
 let postContent = document.querySelector('.post-content');
-let popUpClose = document.querySelector('.close')
-
-
+let popUpClose = document.querySelector('.close');
+let iconAdd = document.getElementById('add-post');
+let postAddOverflowDiv = document.getElementById('overflow-add');
+let formAddPost = document.getElementById('form-add-post');
+let editPostOverflow = document.getElementById('edit-overflow');
+let formEditPost = document.getElementById('post-edit-title');
 
 // https://jsonplaceholder.typicode.com/posts
 
@@ -266,9 +268,7 @@ let popUpClose = document.querySelector('.close')
 //     postContent.innerHTML = '';
 //     let divId = this.getAttribute('data-id');
 //     overflowDiv.classList.add('active');
-    
-   
-    
+
 //     let newUrl = `https://jsonplaceholder.typicode.com/posts/${divId}`
 //     console.log(newUrl);
 
@@ -292,33 +292,31 @@ let popUpClose = document.querySelector('.close')
 //   overflowDiv.classList.remove('active');
 // })
 
-
 // fetch
 
-function aJaxFunction(url,callback) {
+function aJaxFunction(url, callback) {
   fetch(url, {
     method: 'GET',
   })
-  .then((response) => {
-    if(!response.ok) {
-      throw 'error'
-    }
-    return response.json();
-  })
-  .then((responseData) => {
-    callback(responseData);
-  })
-  .catch((error) => console.log(error));
+    .then((response) => {
+      if (!response.ok) {
+        throw 'error';
+      }
+      return response.json();
+    })
+    .then((responseData) => {
+      callback(responseData);
+    })
+    .catch((error) => console.log(error));
 }
 
-
-aJaxFunction('https://jsonplaceholder.typicode.com/posts', function(data) {
-  data.forEach(element => {
+aJaxFunction('https://jsonplaceholder.typicode.com/posts', function (data) {
+  data.forEach((element) => {
     createPostDiv(element);
   });
-  });
+});
 
-  function createPostDiv(item) {
+function createPostDiv(item) {
   let divElement = document.createElement('div');
   divElement.classList.add('post');
   divElement.setAttribute('data-id', item.id);
@@ -329,33 +327,127 @@ aJaxFunction('https://jsonplaceholder.typicode.com/posts', function(data) {
   let postHeading = document.createElement('h2');
   postHeading.innerText = item.title;
 
+  // Create delete button
+  let btnDelete = document.createElement('button');
+  btnDelete.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  btnDelete.classList.add('div-button1');
+
+  divElement.appendChild(btnDelete);
+  btnDelete.setAttribute('data-delete-id', item.id);
+  btnDelete.addEventListener('click', function (event) {
+    event.stopPropagation();
+    let buttonId = this.getAttribute('data-delete-id');
+    //  console.log(buttonId);
+    let deleteUrl = `https://jsonplaceholder.typicode.com/posts/${buttonId}`;
+    // console.log(deleteUrl);
+    fetch(deleteUrl, {
+      method: 'DELETE',
+    }).then(() => divElement.remove());
+  });
+
+  // Create edit button
+  let btnEdit = document.createElement('button');
+  btnEdit.innerHTML = '<i class="fa-solid fa-pen"></i>';
+  btnEdit.classList.add('div-button2');
+  divElement.appendChild(btnEdit);
+  btnEdit.setAttribute('data-edit-id', item.id);
+  btnEdit.addEventListener('click', function (event) {
+    event.stopPropagation();
+
+    editPostOverflow.classList.add('editActive');
+
+    formEditPost.addEventListener('submit', function (e) {
+      e.preventDefault();
+    });
+
+    let btnEditId = this.getAttribute('data-edit-id');
+    // console.log(btnEdit);
+    let editUrl = `https://jsonplaceholder.typicode.com/posts/${btnEditId}`;
+    // console.log(editUrl);
+
+    let newInput = {
+      title: this[0].value,
+    };
+
+    console.log(newInput);
+    fetch(editUrl, {
+      method: 'PUT',
+      body: JSON.stringify(newInput),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((editedObject) => console.log(editedObject));
+  });
+
   divElement.append(idTitle);
   divElement.append(postHeading);
 
-  divElement.addEventListener('click', function() {
+  divElement.addEventListener('click', function () {
     postContent.innerHTML = '';
     let divId = this.getAttribute('data-id');
     overflowDiv.classList.add('active');
-    
-    let newUrl = `https://jsonplaceholder.typicode.com/posts/${divId}`
-    console.log(newUrl);
 
-    aJaxFunction(newUrl, function(newInfoData) {
-      console.log(newInfoData);
-    })
+    let newUrl = `https://jsonplaceholder.typicode.com/posts/${divId}`;
+    // console.log(newUrl);
 
-    aJaxFunction(newUrl, function(dataInfo) {
-     console.log(dataInfo);
-     let pDescr = document.createElement('p');
+    aJaxFunction(newUrl, function (dataInfo) {
+      console.log(dataInfo);
+      let pDescr = document.createElement('p');
       pDescr.innerText = dataInfo.body;
       postContent.appendChild(pDescr);
-    })
-  })
-
+    });
+  });
   mainDiv.appendChild(divElement);
-
 }
 
-popUpClose.addEventListener('click', function(){
+popUpClose.addEventListener('click', function () {
   overflowDiv.classList.remove('active');
-})
+});
+
+// Add post
+iconAdd.addEventListener('click', function () {
+  postAddOverflowDiv.classList.add('activeOverflow');
+});
+
+// Add submit event to the form
+formAddPost.addEventListener('submit', function (e) {
+  e.preventDefault;
+
+  // console.log(e.target[0]);
+  let inputMeaning = {
+    title: this[0].value,
+    // uSerId: 11
+  };
+  console.log(inputMeaning);
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify(inputMeaning),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((newObject) => {
+      // console.log(newObject)
+      postAddOverflowDiv.classList.remove('activeOverflow');
+      this[0].value = '';
+      createPostDiv(newObject);
+    });
+});
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1', {
+//   method: 'PUT',
+//   body: JSON.stringify({
+//     id: 1,
+//     title: 'foo',
+//     body: 'bar',
+//     userId: 1,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));

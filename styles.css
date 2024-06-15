@@ -13,6 +13,7 @@ header {
   background-color: white;
   width:100%;
   transition: all 0.4s;
+  z-index: 1;
 }
 
 
@@ -99,7 +100,10 @@ h2 {
   font-size: 1.8rem;
   color:#f0932b;
   margin-top: 32px;
-  
+}
+
+h3 {
+  padding-left: 16px;;
 }
 
 .user-info {
@@ -121,7 +125,7 @@ span {
 button {
   background-color:#f9ca24;
   border-radius: 4px;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   border:none;
   cursor: pointer;
@@ -136,19 +140,36 @@ button {
 
 
 
+
 .pagination-wrapper {
   margin: 25px;
 }
 
 
 .post {
-  background-color: #f9ca24;
-  max-width: 500px;
+  background-color: #eceae3;
+  max-width:800px;
   width: 100%;
   margin-bottom: 30px;
-  padding: 15px;
+  padding-top:15px;
+  padding-bottom:15px;
+  margin-left: 16px;
+  padding-left: 16px;
+  display:flex;
+  flex-direction: ;
+  align-items: first baseline;
+ 
+}
+
+.post h2 {
+  color:#222f3e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:large;
+  margin-left: 24px;
+  margin-top:0px;
   
 }
+
 
 
 .overflow {
@@ -188,11 +209,105 @@ padding: 16px;
 
 }
 
+
+.add-post {
+ 
+  font-size: 32px;
+  color: green;
+  cursor: pointer;
+
+}
+
+.overflow-add {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 50%;
+background-color: aliceblue;
+min-height: 240px;
+box-shadow:  8px 8px 4px  #84817a4a;
+border-radius: 4px;
+display: none;
+padding: 16px;
+
+}
+
+.overflow-add.activeOverflow{
+display: block;
+}
+
+.edit-overflow {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 50%;
+background-color: aliceblue;
+min-height: 240px;
+box-shadow:  8px 8px 4px  #84817a4a;
+border-radius: 4px;
+display:none;
+padding: 16px;
+}
+
+.edit-overflow.editActive {
+  display: block;
+  }
+
 .fa-solid {
   font-size: 20px;
   color: #222f3e;
 }
 
+.div-button1 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.div-button1::before {
+  content: 'Delete';
+  font-size: 16px;
+ cursor: pointer;
+}
+
+.div-button2 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.div-button2::before {
+  content: 'Edit';
+  font-size: 16px;
+ cursor: pointer;
+}
+
+.add-post {
+width:56px;
+height: 56px;
+align-content: center;
+position: relative;
+left: 45%;
+text-align: center;
+}
+
+.add-post .fa-solid {
+font-size: larger;
+
+
+   
+
+
+
+}
+
+.add-post:hover{
+  background-color:#ffeaa7;
+  border-radius: 4px;
+  }
+  
 
 #ul-element {
   min-height: 100px;
