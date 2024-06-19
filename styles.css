@@ -294,12 +294,11 @@ text-align: center;
 
 .add-post .fa-solid {
 font-size: larger;
+}
 
 
-   
-
-
-
+.input-result li.hide {
+  display: none;
 }
 
 .add-post:hover{

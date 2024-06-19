@@ -227,7 +227,7 @@ let iconAdd = document.getElementById('add-post');
 let postAddOverflowDiv = document.getElementById('overflow-add');
 let formAddPost = document.getElementById('form-add-post');
 let editPostOverflow = document.getElementById('edit-overflow');
-let formEditPost = document.getElementById('post-edit-title');
+let formEditPost = document.getElementById('form-edit-post');
 
 // https://jsonplaceholder.typicode.com/posts
 
@@ -358,27 +358,43 @@ function createPostDiv(item) {
 
     formEditPost.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      let editUrl = `https://jsonplaceholder.typicode.com/posts/${item.id}`;
+      console.log(editUrl);
+
+      let newInput = {
+        title: document.getElementById('postedit-title').value,
+      };
+      console.log(newInput);
+
+      fetch(editUrl, {
+        method: 'PUT',
+        body: JSON.stringify(newInput),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((editedObject) => console.log(editedObject))
+        .catch((error) => console.log(error.message))
+        .finally(() => {
+          document
+            .getElementById('edit-overflow')
+            .classList.remove('editActive');
+          document.getElementById('postedit-title').value = '';
+          let posts = document.getElementsByClassName('post');
+
+          for (let i = 0; i < posts.length; i++) {
+            if (
+              posts[i].hasAttribute('data-id') &&
+              posts[i].getAttribute('data-id') == item.id
+            ) {
+              posts[i].lastChild.textContent = newInput.title;
+              // console.log(posts[i]);
+            }
+          }
+        });
     });
-
-    let btnEditId = this.getAttribute('data-edit-id');
-    // console.log(btnEdit);
-    let editUrl = `https://jsonplaceholder.typicode.com/posts/${btnEditId}`;
-    // console.log(editUrl);
-
-    let newInput = {
-      title: this[0].value,
-    };
-
-    console.log(newInput);
-    fetch(editUrl, {
-      method: 'PUT',
-      body: JSON.stringify(newInput),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((editedObject) => console.log(editedObject));
   });
 
   divElement.append(idTitle);
@@ -413,7 +429,7 @@ iconAdd.addEventListener('click', function () {
 
 // Add submit event to the form
 formAddPost.addEventListener('submit', function (e) {
-  e.preventDefault;
+  e.preventDefault();
 
   // console.log(e.target[0]);
   let inputMeaning = {
@@ -421,6 +437,7 @@ formAddPost.addEventListener('submit', function (e) {
     // uSerId: 11
   };
   console.log(inputMeaning);
+
   fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify(inputMeaning),
@@ -437,17 +454,49 @@ formAddPost.addEventListener('submit', function (e) {
     });
 });
 
-// fetch('https://jsonplaceholder.typicode.com/posts/1', {
-//   method: 'PUT',
-//   body: JSON.stringify({
-//     id: 1,
-//     title: 'foo',
-//     body: 'bar',
-//     userId: 1,
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
+// async await Filter
+
+const inputElement = document.getElementById('filter');
+const ulContainer = document.getElementById('result');
+let listItems = [];
+
+const asyncFnc = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    // console.log(response);
+    if (!response.ok) {
+      throw new Error('Data not available');
+    }
+    let newData = await response.json();
+    // console.log(newData);
+    newData.forEach((element) => {
+      let newLi = document.createElement('li');
+      newLi.innerText = element.name;
+      listItems.push(newLi);
+      ulContainer.appendChild(newLi);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+asyncFnc();
+
+function filterData(searchItem) {
+  listItems.forEach((item) => {
+    if (
+      item.innerText
+        .toLowerCase()
+        .trimStart()
+        .includes(searchItem.toLowerCase().trimStart())
+    ) {
+      item.classList.remove('hide');
+    } else {
+      item.classList.add('hide');
+    }
+  });
+}
+
+inputElement.addEventListener('keyup', function () {
+  filterData(this.value);
+});
