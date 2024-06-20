@@ -228,6 +228,7 @@ let postAddOverflowDiv = document.getElementById('overflow-add');
 let formAddPost = document.getElementById('form-add-post');
 let editPostOverflow = document.getElementById('edit-overflow');
 let formEditPost = document.getElementById('form-edit-post');
+let postInnerContent = document.getElementById('overflow-menu');
 
 // https://jsonplaceholder.typicode.com/posts
 
@@ -365,7 +366,9 @@ function createPostDiv(item) {
       let newInput = {
         title: document.getElementById('postedit-title').value,
       };
-      console.log(newInput);
+
+      let overflowNewContent = document.getElementById('overflow-menu');
+      overflowNewContent.innerText = newInput.title;
 
       fetch(editUrl, {
         method: 'PUT',
@@ -391,6 +394,7 @@ function createPostDiv(item) {
             ) {
               posts[i].lastChild.textContent = newInput.title;
               // console.log(posts[i]);
+              // postInnerContent.firstChild.textContent =
             }
           }
         });
@@ -415,6 +419,7 @@ function createPostDiv(item) {
       postContent.appendChild(pDescr);
     });
   });
+
   mainDiv.appendChild(divElement);
 }
 
@@ -496,6 +501,12 @@ function filterData(searchItem) {
     }
   });
 }
+
+inputElement.addEventListener('focus', () => {
+  let searchDropdown = (document.getElementsByClassName(
+    'search-dropdown'
+  ).style.display = 'block');
+});
 
 inputElement.addEventListener('keyup', function () {
   filterData(this.value);
