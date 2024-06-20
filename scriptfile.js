@@ -502,11 +502,11 @@ function filterData(searchItem) {
   });
 }
 
-inputElement.addEventListener('focus', () => {
-  let searchDropdown = (document.getElementsByClassName(
-    'search-dropdown'
-  ).style.display = 'block');
-});
+// inputElement.addEventListener('focus', () => {
+//   let searchDropdown = (document.getElementsByClassName(
+//     'search-dropdown'
+//   ).style.display = 'block');
+// });
 
 inputElement.addEventListener('keyup', function () {
   filterData(this.value);
