@@ -230,69 +230,6 @@ let editPostOverflow = document.getElementById('edit-overflow');
 let formEditPost = document.getElementById('form-edit-post');
 let postInnerContent = document.getElementById('overflow-menu');
 
-// https://jsonplaceholder.typicode.com/posts
-
-// function aJaxFnc(url, callback) {
-//   let requist = new XMLHttpRequest();
-//   requist.open('GET', url)
-//   requist.addEventListener('load', function() {
-//     // console.log(this.responseText);
-//     let dataReceived = JSON.parse(this.responseText);
-//     // console.log(dataReceived);
-//     callback(dataReceived);
-//   })
-//   requist.send();
-// }
-
-// aJaxFnc('https://jsonplaceholder.typicode.com/posts', function(data) {
-// data.forEach(element => {
-//   createPostDiv(element);
-// });
-// });
-// // Lets create div by function
-
-// function createPostDiv(item) {
-//   let divElement = document.createElement('div');
-//   divElement.classList.add('post');
-//   divElement.setAttribute('data-id', item.id);
-
-//   let idTitle = document.createElement('h3');
-//   idTitle.innerText = item.id;
-
-//   let postHeading = document.createElement('h2');
-//   postHeading.innerText = item.title;
-
-//   divElement.append(idTitle);
-//   divElement.append(postHeading);
-
-//   divElement.addEventListener('click', function() {
-//     postContent.innerHTML = '';
-//     let divId = this.getAttribute('data-id');
-//     overflowDiv.classList.add('active');
-
-//     let newUrl = `https://jsonplaceholder.typicode.com/posts/${divId}`
-//     console.log(newUrl);
-
-//     aJaxFnc(newUrl, function(newInfoData) {
-//       console.log(newInfoData);
-//     })
-
-//     aJaxFnc(newUrl, function(dataInfo) {
-//      console.log(dataInfo);
-//      let pDescr = document.createElement('p');
-//       pDescr.innerText = dataInfo.body;
-//       postContent.appendChild(pDescr);
-//     })
-//   })
-
-//   mainDiv.appendChild(divElement);
-
-// }
-
-// popUpClose.addEventListener('click', function(){
-//   overflowDiv.classList.remove('active');
-// })
-
 // fetch
 
 function aJaxFunction(url, callback) {
