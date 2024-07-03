@@ -7,12 +7,16 @@
   <!-- This is Eric Meyer's reset -->
   <link rel="stylesheet" href="css-reset.css">
 
-  <!-- This is my own stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+ 
   <!-- Font-awesome kit -->
   <script src="https://kit.fontawesome.com/ed83a1faf6.js" crossorigin="anonymous"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <!-- This is my own stylesheet -->
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 
@@ -56,6 +60,12 @@
             <span><i class="fa-solid fa-chevron-right"></i></span>
           </button>
         </div>
+      </div>
+
+      <div class="honey-product" id ="honey-product">
+        <ul class = "menu-list" id="honey-list">
+
+        </ul>
       </div>
       
       <div class="post-container" id="post-wrapper">
@@ -146,7 +156,7 @@
 
 
 
-
-  <script src="scriptfile.js" ></script>
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script type="module" src="scripts/scriptfile.js" ></script>
 </body>
 </html>

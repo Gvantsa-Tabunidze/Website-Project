@@ -1,5 +1,4 @@
 
-
 header {
   min-height: 92px;
   /* box-shadow: 0px 0px 8px rgba(59,58,58); */
@@ -7,7 +6,9 @@ header {
   position: fixed;
   background-color: white;
   width:100%;
-  transition: all 0.4s;
+  top: 0;
+  left: 0;
+  transition: all 0.8s;
   z-index: 1;
 }
 
@@ -20,17 +21,26 @@ header {
   align-items: center;
   height:fit-content;
   padding: 0 100px;
- 
 }
+
+
+
+
 
 .newHeader {
   background-color: #222f3e;
+  .nav-item a {
+    color: #f0f8ff;
+    &:hover {
+      border-bottom: solid 1px #f0f8ff;
+    }
+  }
+  a.logo {
+    content: url('images/newlogo.svg');
+  }
+
 }
 
-
-.linknew-color {
-  color: white;
-}
 
 .nav-menu {
   display: flex;
@@ -39,29 +49,33 @@ header {
   gap: 40px;
 }
 
+.burger {
+  display: none;
+}
+
 li {
 list-style: none;
 }
 
-a {
+.nav-link {
   color: #222f3e;
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-family:'Poppins';
 }
 
-.burger {
-  display: none;
-  cursor:pointer;
-  
-  
+.nav-item a:hover {
+ border-bottom: solid 1px #222f3e;
 }
+
+
 
 .bar {
   display: block;
   width: 16px;
   height: 2px;
   margin: 6px auto;
-  background-color: #222f3e;
+  background-color:#f9ca24;
   transition: all 0.3s ease-in-out;
   border-radius: 16px;
 
@@ -70,7 +84,7 @@ a {
  .bar:nth-child(2) {
   width: 24px;
 }
-  
+
 
 
 a.logo {
@@ -80,15 +94,6 @@ a.logo {
 
  
 
-/* .hero-div {
-  width: 100%;
-} */
-
-/* .wrapper{
- 
-  width:100%;
-  
-} */
 
 
 h2 {
@@ -166,6 +171,23 @@ button {
 .pagination-wrapper {
   margin: 25px;
 }
+
+
+
+
+.menu-list {
+ display: block;
+ text-align: center;
+ width: 200px;
+}
+
+.itemImage {
+  object-fit:cover;
+  width: 200px;
+  height: 200px;
+}
+
+
 
 
 .post {
@@ -550,10 +572,18 @@ content: '\f077';
 
 @media(max-width: 768px) {
 
+    
+.navbar {
+  padding: 0;
+  margin: 24px;
+}
+
   .burger {
     display: block;
-    
-
+  }
+  .burger:hover{
+    opacity: 50%;
+    cursor: pointer;
   }
   .burger.active .bar:nth-child(2) {
     opacity:0;
@@ -565,6 +595,7 @@ content: '\f077';
     transform: translateY(-8px) rotate(-45deg);
   }
 
+
   .nav-menu {
     position:fixed;
     left: -100%;
@@ -572,16 +603,15 @@ content: '\f077';
     gap:0;
     flex-direction: column;
     background-color: white;
-    opacity: 85%;
     width: 100%;
-    text-align: center;
     transition: 0.3s;
-    padding: 8px 0px;
+    padding: 16px 0;
   }
 
   .nav-item {
     height: 40px;
     width:max-content;
+    justify-content: center;
   }
   .nav-menu.active {
     left: 0;
@@ -589,3 +619,15 @@ content: '\f077';
 }
 
 
+@media(max-width: 480px) {
+  .navbar {
+    margin: 12px;
+  }
+}
+
+
+@media(max-width: 480px) {
+  .navbar {
+    margin: 4px;
+  }
+}
