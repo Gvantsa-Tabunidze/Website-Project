@@ -23,11 +23,11 @@
 <body>
   
     <header id="hdr">
+      <div class="logo-div"><a href="#" class="logo">
+        <img src="images/honeylogo.svg" alt="logo for honey maker">
+      </a></div>
+
       <nav class="navbar">
-        <a href="#" class="logo">
-          <img src="images/honeylogo.svg" alt="logo for honey maker">
-        </a>
-        
         <ul class="nav-menu">
           <li class="nav-item">
             <a href="#" class = "nav-link">About us</a>
@@ -48,13 +48,15 @@
       </nav>
     </header>
 
-    <div class ="hero-div" id="hero"></div>
+    <div class ="hero-div" id="hero">
+      <img src="images/honey.png" class = "hero-image" alt="honeycomb">
+    </div>
     
     <section>
 
-      <div class="search" id ="search-bar">
+      <div class="search" id ="search-div">
         <h3>Find your honey jar here! <span><i class="fa-regular fa-face-smile"></i></span></h3>
-        <input type="text" placeholder="Search for...">
+        <input type="text" id ="search-bar" placeholder="Search for...">
         <ul id="outcome"></ul>
 
 
@@ -101,14 +103,7 @@
         </div>
       </div>
 
-      <div class="search">
-        <h3>Find user</h3>
-        <input type="text" id="filter">
-        <div class="search-dropdown">
-          <ul class="input-result" id="result"></ul>
-        </div>
-        
-      </div>
+ 
       
     </section>
 

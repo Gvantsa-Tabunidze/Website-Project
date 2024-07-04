@@ -17,25 +17,25 @@ document.querySelectorAll('.nav-link').forEach((element) =>
   })
 );
 
-let heroDiv = document.createElement('div');
-heroDiv.classList.add('wrapper');
+// let heroDiv = document.createElement('div');
+// heroDiv.classList.add('wrapper');
 
-let imageHero = document.createElement('img');
-imageHero.setAttribute('src', 'images/honeymaking.jpg');
-imageHero.setAttribute('alt', 'Image');
-imageHero.style.height = '100%';
-imageHero.style.width = '100%';
+// let imageHero = document.createElement('img');
+// imageHero.setAttribute('src', 'images/honeymaking.jpg');
+// imageHero.setAttribute('alt', 'Image');
+// imageHero.style.height = '100%';
+// imageHero.style.width = '100%';
 
-let headingHero = document.createElement('h2');
-headingHero.classList.add('title');
-headingHero.innerText = 'Bee honey making';
-headingHero.style.fontSize = '3.5rem';
-headingHero.style.color = '#e58e26';
+// let headingHero = document.createElement('h2');
+// headingHero.classList.add('title');
+// headingHero.innerText = 'Bee honey making';
+// headingHero.style.fontSize = '3.5rem';
+// headingHero.style.color = '#e58e26';
 
-heroDiv.appendChild(imageHero);
-heroDiv.appendChild(headingHero);
+// heroDiv.appendChild(imageHero);
+// heroDiv.appendChild(headingHero);
 
-document.getElementById('hero').appendChild(heroDiv);
+// document.getElementById('hero').appendChild(heroDiv);
 
 // Home work 7:
 
@@ -391,59 +391,18 @@ formAddPost.addEventListener('submit', function (e) {
     });
 });
 
-// async await Filter
-
-const inputElement = document.getElementById('filter');
-const ulContainer = document.getElementById('result');
-let listItems = [];
-
-const asyncFnc = async () => {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    // console.log(response);
-    if (!response.ok) {
-      throw new Error('Data not available');
-    }
-    let newData = await response.json();
-    // console.log(newData);
-    newData.forEach((element) => {
-      let newLi = document.createElement('li');
-      newLi.innerText = element.name;
-      listItems.push(newLi);
-      ulContainer.appendChild(newLi);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-asyncFnc();
-
-function filterData(searchItem) {
-  listItems.forEach((item) => {
-    if (
-      item.innerText
-        .toLowerCase()
-        .trimStart()
-        .includes(searchItem.toLowerCase().trimStart())
-    ) {
-      item.classList.remove('hide');
-    } else {
-      item.classList.add('hide');
-    }
-  });
-}
-
-// inputElement.addEventListener('focus', () => {
-//   let searchDropdown = (document.getElementsByClassName(
-//     'search-dropdown'
-//   ).style.display = 'block');
-// });
-
-inputElement.addEventListener('keyup', function () {
-  filterData(this.value);
-});
-
 // Server data import
 import { getProductInfo } from './faux-api.js';
 getProductInfo();
+
+// Import search filter
+import {
+  asyncFunction,
+  filterOnkeyUp,
+  focusSearch,
+  clickOutside,
+} from './Searchfilter.js';
+asyncFunction();
+filterOnkeyUp();
+focusSearch();
+clickOutside();
