@@ -99,6 +99,7 @@ a.logo {
 h2 {
   font-size: 1.8rem;
   color:#f0932b;
+  text-align: center;
   
 }
 
@@ -134,10 +135,11 @@ h3 {
 
 
 .user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  padding-top:24px;
+  margin: auto;
   min-height: 100px;
   
  
@@ -175,20 +177,30 @@ button {
 
 
 
-.menu-list {
- display: block;
- text-align: center;
- width: 200px;
-}
 
 .itemImage {
+  display: block;
+  text-align: center;
   object-fit:cover;
   width: 200px;
   height: 200px;
 }
 
+.menu-list {
+ max-width: 1120px;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  margin: auto;
+ 
+
+}
 
 
+.productCard {
+  text-align: center;
+}
 
 .post {
   background-color: #eceae3;
