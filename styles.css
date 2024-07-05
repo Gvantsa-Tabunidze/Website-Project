@@ -258,6 +258,68 @@ padding: 24px 24px;
   visibility: hidden;
 }
 
+.form-select.error i.fa-circle-exclamation {
+  visibility: visible;
+  color: red;
+}
+
+.form-select.error small{
+  visibility: visible;
+  color: red;
+}
+
+.form-select.success i.fa-circle-check {
+  visibility: visible;
+  color: green;
+}
+
+.form-select.success small{
+  visibility: visible;
+  color: green;
+}
+
+.checkbox-form {
+display: flex;
+height:fit-content;
+width: 100%;
+position: relative;
+padding: 24px 24px;
+}
+.checkbox-form i {
+  position: absolute;
+  top: 50px;
+  right: 32px;
+  visibility: hidden;
+}
+
+.checkbox-form small {
+  position: absolute;
+  left: 24px;
+  top:52px; 
+  color: red;
+  visibility: hidden;
+}
+
+.checkbox-form.error i.fa-circle-exclamation {
+  visibility: visible;
+  color: red;
+}
+
+.checkbox-form.error small{
+  visibility: visible;
+  color: red;
+}
+
+.checkbox-form.success i.fa-circle-check {
+  visibility: visible;
+  color: green;
+}
+
+.checkbox-form.success small{
+  visibility: visible;
+  color: green;
+}
+
 .check {
   display: flex;
   gap: 12px;

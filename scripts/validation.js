@@ -10,8 +10,8 @@ const userEmail = document.getElementById('useremail');
 const telNumber = document.getElementById('telephone');
 const pass1 = document.getElementById('pass1');
 const pass2 = document.getElementById('pass2');
-const radioArray = document.querySelectorAll('[name="gender"]');
-const checkBox = document.getElementById('agreefield');
+const radioArray = form.querySelectorAll('[name="gender"]');
+const checkBox = document.getElementById('checkbox-form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -29,8 +29,8 @@ function checkInputs() {
   const telValue = telNumber.value.trim();
   const pass1Value = pass1.value.trim();
   const pass2Value = pass2.value.trim();
-  // radioArray
-  // checkBox
+  // radioArray value verified inside if condition
+  // checkBox value verified inside if condition
 
   // First name
   if (nameValue === '') {
@@ -88,6 +88,29 @@ function checkInputs() {
     // add success class
     setSuccessFor(pass2, 'Good job baddy!');
   }
+
+  // Check radio buttons
+  let gender = false;
+  radioArray.forEach((item) => {
+    if (item.checked) {
+      gender = true;
+      radioSuccess(radioArray, 'Good job baddy!');
+    }
+  });
+  if (gender === false) {
+    radioError(radioArray, 'Select your gender');
+  }
+
+  // Check the checkbox
+  const agree = document.getElementById('agreefield').checked;
+  if (!agree) {
+    checkboxError(
+      checkBox,
+      'First, agree the terms & conditions to further actions'
+    );
+  } else {
+    checkboxSuccess(checkBox, 'Good job baddy!');
+  }
 }
 
 function setErrorFor(input, message) {
@@ -114,4 +137,32 @@ function passwordRegex(password) {
   return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/.test(
     password
   );
+}
+
+function radioError(input, message) {
+  const radioInput = document.querySelector('.form-select');
+  radioInput.classList.add('error');
+  const radioSmall = radioInput.querySelector('small');
+  radioSmall.innerText = message;
+}
+
+function radioSuccess(input, message) {
+  const radioInput = document.querySelector('.form-select');
+  radioInput.classList.add('success');
+  const radioSmall = radioInput.querySelector('small');
+  radioSmall.innerText = message;
+}
+
+function checkboxError(input, message) {
+  const chekboxInput = document.querySelector('.checkbox-form');
+  chekboxInput.className = 'checkbox-form error';
+  const checkboxSmall = chekboxInput.querySelector('small');
+  checkboxSmall.innerText = message;
+}
+
+function checkboxSuccess(input, message) {
+  const chekboxInput = document.querySelector('.checkbox-form');
+  chekboxInput.className = 'checkbox-form success';
+  const checkboxSmall = chekboxInput.querySelector('small');
+  checkboxSmall.innerText = message;
 }
