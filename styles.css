@@ -1,18 +1,23 @@
 
+/*  hover : #ffeaa7 
+enabled: #f9ca24
+tetx color : #222f3e
+for headings : #f0932b
+*/
+
 * {
   box-sizing: border-box;
 }
 
 
 header {
-  min-height: 80px;
+  height: 120px;
   /* box-shadow: 0px 0px 8px rgba(59,58,58); */
   align-content: center;
   position: fixed;
   width:100%;
   top: 0;
   left: 0;
-  transition: all 0.8s;
   z-index: 1;
 }
 
@@ -22,28 +27,9 @@ header {
 .navbar {
   display:flex;
   flex-direction: row;
-  justify-content:space-between;
-  height:60px;
-  padding: 0 100px;
-}
-
-
-
-
-
-.newHeader {
-  background-color: #222f3e;
-  .nav-item a {
-    color: #f0f8ff;
-    &:hover {
-      border-bottom: solid 1px #f0f8ff;
-    }
-  }
-  a.logo {
-    content: url('images/newlogo.svg');
-   
-  }
-
+  justify-content:flex-end;
+  height:40px;
+  margin: 0 40px;
 }
 
 
@@ -63,14 +49,14 @@ list-style: none;
 }
 
 .nav-link {
-  color: #222f3e;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   font-family:'Poppins';
 }
 
 .nav-item a:hover {
- border-bottom: solid 1px #222f3e;
+ border-bottom: solid 1px #ffffff;
 }
 
 
@@ -98,10 +84,10 @@ list-style: none;
   background-color: #ffffff;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  position: relative;
-  margin: auto;
-
-
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%);
 }
 
 a img {
@@ -111,27 +97,211 @@ a img {
   margin: 0;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);;
+  transform: translate(-50%, -50%);
   }
 
+
+  
+.newHeader {
+  background-color: #222f3e;
+  .nav-item a {
+    color: #f0f8ff;
+    &:hover {
+      border-bottom: solid 1px #f0f8ff;
+    }
+  }
+  a.logo {
+    content: url('images/newlogo.svg');
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .logo-div {
+    background-color:#222f3e;
+    
+  }
+
+}
 
 
  
 .hero-div {
   width: 100%;
   min-height: 600px;
- 
-  
+  background-image: url('images/honey.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
-.hero-image {
+
+
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: max-content;
+}
+
+
+/* Validation form */
+
+#validation-form {
+  background-color:#ffffff;
+  border-radius: 16px;
+  border: 1px solid #222f3e50;
+  min-height: 600px;
+  width: 600px;
+  box-shadow: 8px 8px 8px #222f3e25;
+  margin: auto;
+  margin-top: 80px;
+  display:flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.form-div {
+height:fit-content;
 width: 100%;
+position: relative;
+padding: 24px 24px;
+}
 
+.form-select {
+display: flex;
+height:fit-content;
+width: 100%;
+position: relative;
+padding: 24px 24px;
+}
 
+.form-select small {
+  position: absolute;
+  left: 24px;
+  top:52px; 
+  color: red;
+  visibility: hidden;
+}
 
+.input-class {
+  height: 40px;
+  border: #222f3e50 1px solid;
+  border-radius: 8px;
+  display: block;
+  width: 100%; 
+}
+
+.form-div.success input {
+  border-color: green;
+}
+
+.form-div.success i.fa-circle-check {
+  visibility: visible;
+  color: green;
+}
+
+.form-div.success small{
+  visibility: visible;
+  color: green;
+}
+
+.form-div.error input {
+  border-color: red;
+}
+
+.form-div.error i.fa-circle-exclamation {
+  visibility: visible;
+  color: red;
+}
+
+.form-div.error small{
+  visibility: visible;
+  color: red;
+}
+
+.gender {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  gap: 12px; 
+}
+
+.form-div i {
+  position: absolute;
+  top: 50px;
+  right: 32px;
+  visibility: hidden;
+}
+
+.form-div small {
+  position: absolute;
+  left: 24px;
+  top: 90px;
+  color: red;
+  visibility: hidden;
+}
+
+.form-select i {
+  position: absolute;
+  top: 50px;
+  right: 32px;
+  visibility: hidden;
+}
+
+.check {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 
 
+.submit {
+  background-color:#f9ca24;
+  margin: 40px 24px 24px 24px;
+  padding: 12px 24px;
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  color: #222f3e;
+  transition: all 0.4s;
+  border-radius: 8px;
+  border: none;
+}
+
+
+.submit:hover {
+  background-color:#ffeaa7;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width:20px;
+  margin: 0;
+}
+
+
+input[type="radio"] {
+  height: 20px;
+  width:20px;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
 
 
 h2 {
@@ -145,10 +315,42 @@ h3 {
   font-size: 24px;
   color: #f0932b;
   font-weight: bold;
+}
+
+
+.primary {
+  background-color:#f9ca24;
+  border: none;
+  border-radius: 8px;
+  padding:12px 24px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 0.4s;
   
- 
 
 }
+
+
+.primary:hover {
+  background-color:#ffeaa7;
+  cursor: pointer;
+}
+
+.primary a {
+  text-decoration: none;
+  color: #222f3e;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+  
+
+
+
+
+
 #filter {
   width:100%;
   height: 40px;
@@ -242,7 +444,7 @@ span {
   color: #222f3e;
 }
 
-button {
+.arrow {
   background-color:#f9ca24;
   border-radius: 4px;
   min-width: 40px;
@@ -251,7 +453,7 @@ button {
   cursor: pointer;
 }
 
-button {
+.arrow {
   &:disabled{
     opacity: 50%;
     cursor: not-allowed;
@@ -451,12 +653,6 @@ font-size: larger;
   gap: 16px;
   width: 100%;
 }
-
-/* .input-result li.hide {
-  display: none;
-  
-
-} */
 
 
 .add-post:hover{

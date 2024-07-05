@@ -1,0 +1,117 @@
+'use strict';
+
+const form = document.getElementById('validation-form');
+const fName = document.getElementById('firstname');
+const lName = document.getElementById('lastname');
+const birthDate = document.getElementById('birthdate');
+const residCountry = document.getElementById('residentcountry');
+const residCity = document.getElementById('residentcity');
+const userEmail = document.getElementById('useremail');
+const telNumber = document.getElementById('telephone');
+const pass1 = document.getElementById('pass1');
+const pass2 = document.getElementById('pass2');
+const radioArray = document.querySelectorAll('[name="gender"]');
+const checkBox = document.getElementById('agreefield');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  checkInputs();
+});
+
+function checkInputs() {
+  // get values from the iputs
+  const nameValue = fName.value.trim();
+  const surnameValue = lName.value.trim();
+  const birthValue = birthDate.value.trim();
+  const countryValue = residCountry.value.trim();
+  const cityValue = residCity.value.trim();
+  const emailValue = userEmail.value.trim();
+  const telValue = telNumber.value.trim();
+  const pass1Value = pass1.value.trim();
+  const pass2Value = pass2.value.trim();
+  // radioArray
+  // checkBox
+
+  // First name
+  if (nameValue === '') {
+    // show error
+    // console.log('Looser');
+    setErrorFor(fName, 'First name field can not be empty');
+  } else {
+    // add success class
+    setSuccessFor(fName, 'Good job baddy!');
+  }
+
+  // Last name
+  if (surnameValue === '') {
+    // show error
+    // console.log('Looser');
+    setErrorFor(lName, 'Last name field can not be empty');
+  } else {
+    // add success class
+    setSuccessFor(lName, 'Good job baddy!');
+  }
+
+  // Email
+  if (emailValue === '') {
+    // show error
+    // console.log('Looser');
+    setErrorFor(userEmail, 'Email field can not be empty');
+  } else if (!emailRegex(emailValue)) {
+    setErrorFor(userEmail, 'Email is not valid');
+  } else {
+    // add success class
+    setSuccessFor(userEmail, 'Good job baddy!');
+  }
+
+  // Pass1
+  if (pass1Value === '') {
+    // show error
+    // console.log('Looser');
+    setErrorFor(pass1, 'Password field can not be empty');
+  } else if (!passwordRegex(pass1Value)) {
+    setErrorFor(pass1, 'Invalid password');
+  } else {
+    // add success class
+    setSuccessFor(pass1, 'Good job baddy!');
+  }
+  // Pass2
+  if (pass2Value === '') {
+    // show error
+    // console.log('Looser');
+    setErrorFor(pass2, 'Password field can not be empty');
+  } else if (pass1Value !== pass2Value) {
+    setErrorFor(pass2, 'Password do not match each other');
+  } else if (!passwordRegex(pass2Value)) {
+    setErrorFor(pass2, 'Invalid password');
+  } else {
+    // add success class
+    setSuccessFor(pass2, 'Good job baddy!');
+  }
+}
+
+function setErrorFor(input, message) {
+  const formDiv = input.parentElement;
+  formDiv.className = 'form-div error';
+  const smallText = formDiv.querySelector('small');
+  smallText.innerText = message;
+}
+
+function setSuccessFor(input, message) {
+  const formDiv = input.parentElement;
+  formDiv.className = 'form-div success';
+  const smallText = formDiv.querySelector('small');
+  smallText.innerText = message;
+}
+
+function emailRegex(email) {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
+}
+
+function passwordRegex(password) {
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/.test(
+    password
+  );
+}

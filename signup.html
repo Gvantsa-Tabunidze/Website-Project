@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+
+   <!-- This is Eric Meyer's reset -->
+   <link rel="stylesheet" href="css-reset.css">
+
+ 
+   <!-- Font-awesome kit -->
+   <script src="https://kit.fontawesome.com/ed83a1faf6.js" crossorigin="anonymous"></script>
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- This is my own stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h2>Create Account</h2>
+ 
+
+
+  <section>
+    <form action="#" id ="validation-form">
+      <div class="form-div">
+        <label for="firstname" id="name">First name</label>
+      <input type="text" class="input-class" name="fnamefield" id ="firstname" placeholder="your name">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+
+      <div class="form-div">
+        <label for="lastname" id="surname">Last name</label>
+      <input type="text" class="input-class" name="lnamefield" id="lastname" placeholder="your surname">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+      <div class="form-div">
+        <label for="birthdate">Birth date</label>
+      <input type="date" class="input-class"  name="birthfield" id="birthdate">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+
+      <div class="form-div">
+        <label for="residentcountry" id="country">Country</label>
+      <input type="text" class="input-class" name="livecountry" id="residentcountry" placeholder="country of residence">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+
+      <div class="form-div">
+        <label for="residentcity" id="city">City</label>
+      <input type="text" class="input-class" name="livecity" id="residentcity" placeholder="city of residence">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+
+      <div class="form-div">
+        <label for="useremail" id="Email">Email</label>
+        <input type="email" class="input-class" name="youremail" id="useremail" placeholder="ex:my_email@yahoo.com">
+        <i class="fa-solid fa-circle-check"></i>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <small>Error message</small>
+      </div>
+     
+      <div class="form-div">
+        <label for="telephone" id="phonenumber">Phone</label>
+      <input type="tel" class="input-class" name="telephone" id="telephone" placeholder="ex: (+XXX)-(XXXXXX)">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+      <div class="form-div">
+        <label for="pass1" id="passkey1">Password</label>
+      <input type="password" class="input-class" name="password-key1" id="pass1" placeholder="********">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+
+      <div class="form-div">
+        <label for="pass2" id="passkey2">Confirm your password</label>
+      <input type="password" class="input-class" name="passwordkey2" id="pass2" placeholder="********">
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+
+      <div class="form-select">
+        <div class="gender">
+          <input type="radio" class="input-class" name="gender" id="maleradio">
+          <label for="maleradio" id="radio1">Male</label>
+        </div>
+
+        <div class="gender">
+          <input type="radio" class="input-class" name="gender" id="femalegender">
+          <label for="femalegender" id="radio2">Female</label>
+        </div>
+       
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+
+      <div class="form-select">
+        <div class="check">
+          <input type="checkbox" class="input-class" name="agree" id="agreefield">
+          <label for="agreefield">I agree with terms and conditions</label>
+        </div>
+       
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+        <small>Error message</small>
+      </div>
+
+      <button class="submit">Submit</button>
+      
+      
+      
+      
+
+
+    </form>
+  </section>
+
+
+
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script type="module" src="scripts/validation.js" ></script>
+</body>
+</html>

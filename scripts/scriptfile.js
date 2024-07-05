@@ -17,26 +17,6 @@ document.querySelectorAll('.nav-link').forEach((element) =>
   })
 );
 
-// let heroDiv = document.createElement('div');
-// heroDiv.classList.add('wrapper');
-
-// let imageHero = document.createElement('img');
-// imageHero.setAttribute('src', 'images/honeymaking.jpg');
-// imageHero.setAttribute('alt', 'Image');
-// imageHero.style.height = '100%';
-// imageHero.style.width = '100%';
-
-// let headingHero = document.createElement('h2');
-// headingHero.classList.add('title');
-// headingHero.innerText = 'Bee honey making';
-// headingHero.style.fontSize = '3.5rem';
-// headingHero.style.color = '#e58e26';
-
-// heroDiv.appendChild(imageHero);
-// heroDiv.appendChild(headingHero);
-
-// document.getElementById('hero').appendChild(heroDiv);
-
 // Home work 7:
 
 // To do list(Honey list)
