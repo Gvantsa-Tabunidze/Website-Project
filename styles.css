@@ -31,14 +31,27 @@ header {
 
 .navbar {
   display:flex;
-  flex-direction: row;
-  justify-content:flex-end;
+  flex-direction:row;
   height:40px;
-  margin: 0 40px;
+  margin: 0 80px;
+  justify-content: space-between;
 }
 
 
 .nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+.nav-home .fa-house{
+  color: white;
+}
+
+
+.othermenu{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +123,7 @@ a img {
 .newHeader {
   background-color: #222f3e;
   .nav-item a {
-    color: #f0f8ff;
+    color:#f9ca24;
     &:hover {
       border-bottom: solid 1px #f0f8ff;
     }
@@ -127,7 +140,9 @@ a img {
   }
   .logo-div {
     background-color:#222f3e;
-    
+  }
+  .nav-home .fa-house{
+    color:#f9ca24;
   }
 
 }
@@ -142,6 +157,8 @@ a img {
   background-repeat: no-repeat;
   position: relative;
 }
+
+
 
 
 
@@ -161,18 +178,45 @@ h1 {
 
 /* Validation form */
 
+.formValidation{
+ height: 100%;
+ background-image: url('./images/honeycomb.jpg');
+ padding: 160px 0 20px 0;
+}
+
+
 #validation-form {
   background-color:#ffffff;
   border-radius: 16px;
   border: 1px solid #222f3e50;
+  width:600px;
+  max-width: 95%;
   min-height: 600px;
-  width: 600px;
   box-shadow: 8px 8px 8px #222f3e25;
   margin: auto;
-  margin-top: 80px;
   display:flex;
   flex-direction: column;
   padding: 64px;
+}
+
+#validation-form > h2 {
+  margin-bottom: 64px;
+}
+
+.heading {
+ height: 64px;
+ width: fit-content;
+ display: flex;
+ gap: 24px;
+ align-items: center;
+ align-self: center;
+}
+.heading > img{
+  height: 40px;
+  width: 40px;
+  color: #f0932b;
+  
+  
 }
 
 .form-div {
@@ -232,11 +276,25 @@ padding: 24px 0;
   background-color: white;
 }
 
+.req{
+  color: red;
+  position: absolute;
+  top: -8px;
+}
+
+
+
 .input-class:focus ~ .form-label{
   top: -8px;
   left: 8px;
  transform: scale(0.88);
  color:#f0932b;
+}
+
+.input-class:not(:placeholder-shown).input-class:not(:focus) ~ .form-label{
+  top: -8px;
+  left: 8px;
+ transform: scale(0.88);
 }
 
 
@@ -250,6 +308,15 @@ padding: 24px 0;
   visibility: visible;
   color: green;
 }
+
+.form-div.success .form-label {
+color: green;
+}
+
+.form-div.success .input-class:not(:focus) label {
+color: green;
+}
+
 
 .form-div.success small{
   visibility: visible;
@@ -422,7 +489,7 @@ right: 24px;
 }
 
 
-.form-div :nth-child(3) {
+.form-div :nth-child(5) {
   position: absolute;
   right: -32px;
 }

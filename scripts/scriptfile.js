@@ -1,21 +1,18 @@
 'use strict';
 
-// Burger Bar animation
+// Totop scroll animation 
+let topScroll = document.createElement('div');
+topScroll.classList.add('contbg');
+topScroll.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+document.querySelector('.btn-target-container').appendChild(topScroll);
 
-let burger = document.querySelector('.burger');
-let navMenu = document.querySelector('.nav-menu');
-
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  navMenu.classList.toggle('active');
+topScroll.addEventListener('click', function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 });
 
-document.querySelectorAll('.nav-link').forEach((element) =>
-  element.addEventListener('click', () => {
-    burger.classList.remove('active');
-    navMenu.classList.remove('active');
-  })
-);
 
 // Home work 7:
 
@@ -73,28 +70,7 @@ formEl.addEventListener('submit', function (event) {
   input.value = '';
 });
 
-// Header bg on scroll
 
-let header = document.getElementById('hdr');
-window.addEventListener('scroll', function () {
-  if (window.scrollY >= 200) {
-    header.classList.add('newHeader');
-  } else {
-    header.classList.remove('newHeader');
-  }
-});
-
-let topScroll = document.createElement('div');
-topScroll.classList.add('contbg');
-topScroll.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
-document.querySelector('.btn-target-container').appendChild(topScroll);
-
-topScroll.addEventListener('click', function () {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-});
 
 let accordionlist = document
   .querySelectorAll('.acc-list-item')
@@ -386,3 +362,10 @@ asyncFunction();
 filterOnkeyUp();
 focusSearch();
 clickOutside();
+
+
+// Import burger menu
+
+import{burgerAnimation, headerAnimation} from './burger.js';
+burgerAnimation();
+headerAnimation();

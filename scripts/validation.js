@@ -1,5 +1,10 @@
 'use strict';
 
+
+import{burgerAnimation, headerAnimation} from './burger.js';
+burgerAnimation();
+headerAnimation();
+
 const form = document.getElementById('validation-form');
 const fName = document.getElementById('firstname');
 const lName = document.getElementById('lastname');

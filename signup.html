@@ -21,15 +21,57 @@
 </head>
 <body>
 
-  <h2>Create Account</h2>
+  <header id="hdr">
+    <div class="logo-div"><a href="#" class="logo">
+      <img src="images/honeylogo.svg" alt="logo for honey maker">
+    </a></div>
+
+    <nav class="navbar">
+      <div class="home">
+        <li class="nav-home">
+          <a href="./index.html" class = "nav-link"><i class="fa-solid fa-house"></i></a>
+        </li> 
+      </div>
+
+      <ul class="nav-menu">
+   
+        <div class="othermenu">
+          <li class="nav-item">
+            <a href="#" class = "nav-link">About us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class = "nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class = "nav-link">Contact</a>
+          </li>    
+        </div>
+            
+      </ul>
+     
+  
+
+      <div class="burger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
  
 
 
-  <section>
+  <div class="formValidation">
+ 
     <form action="#" id ="validation-form">
+      <div class="heading">
+        <h2>Create your account now!</h2>
+        <img src="./images/bee.svg" alt="">
+      </div>
+      
       <div class="form-div">
-        <input type="text" class="input-class" name="fnamefield" id ="firstname" autocomplete="off">
-        <label for="firstname" class="form-label" id="name">First name</label>
+        <input type="text" class="input-class" name="fnamefield" id ="firstname" autocomplete="off" placeholder="">
+        <label for="firstname" class="form-label" id="name">First name <span class="req">*</span></label>
       
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
@@ -37,8 +79,8 @@
       </div>
 
       <div class="form-div">
-        <input type="text" class="input-class" name="lnamefield" id="lastname" autocomplete="off">
-        <label for="lastname"  class="form-label" id="surname">Last name</label>
+        <input type="text" class="input-class" name="lnamefield" id="lastname" autocomplete="off" placeholder="">
+        <label for="lastname"  class="form-label" id="surname">Last name <span class="req">*</span></label>
       
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
@@ -46,7 +88,7 @@
       </div>
       
       <div class="form-div">
-        <input type="text" class="input-class"  name="birthfield" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" id="birthdate" autocomplete="off">
+        <input type="text" class="input-class"  name="birthfield" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" id="birthdate" autocomplete="off" placeholder="">
         <label for="birthdate" class="form-label">Birth date</label>
       
       <i class="fa-solid fa-circle-check"></i>
@@ -56,7 +98,7 @@
       
 
       <div class="form-div">
-        <input type="text" class="input-class" name="livecountry" id="residentcountry" autocomplete="off">
+        <input type="text" class="input-class" name="livecountry" id="residentcountry" autocomplete="off" placeholder="">
         <label for="residentcountry" class="form-label" id="country">Country</label>
       
       <i class="fa-solid fa-circle-check"></i>
@@ -66,7 +108,7 @@
       
 
       <div class="form-div">
-        <input type="text" class="input-class" name="livecity" id="residentcity" autocomplete="off">
+        <input type="text" class="input-class" name="livecity" id="residentcity" autocomplete="off" placeholder="">
         <label for="residentcity" class="form-label" id="city">City</label>
       
       <i class="fa-solid fa-circle-check"></i>
@@ -76,8 +118,8 @@
       
 
       <div class="form-div">
-        <input type="email" class="input-class" name="youremail" id="useremail" autocomplete="off">
-        <label for="useremail" class="form-label" id="Email">Email</label>
+        <input type="email" class="input-class" name="youremail" id="useremail" autocomplete="off" placeholder="">
+        <label for="useremail" class="form-label" id="Email">Email <span class="req">*</span></label>
         
         <i class="fa-solid fa-circle-check"></i>
         <i class="fa-solid fa-circle-exclamation"></i>
@@ -85,7 +127,7 @@
       </div>
      
       <div class="form-div">
-        <input type="tel" class="input-class" name="telephone" id="telephone" autocomplete="off">
+        <input type="tel" class="input-class" name="telephone" id="telephone" autocomplete="off" placeholder="">
         <label for="telephone"  class="form-label" id="phonenumber">Phone</label>
       
       <i class="fa-solid fa-circle-check"></i>
@@ -94,22 +136,21 @@
       </div>
       
       <div class="form-div">
-        <input type="password" class="input-class" name="password-key1" id="pass1" autocomplete="off">
-        <label for="pass1" class="form-label" id="passkey1">Password</label>
-       <i class="fa-solid fa-eye" id="visibility-btn1"></i>
-      
+        <input type="password" class="input-class" name="password-key1" id="pass1" autocomplete="off" placeholder="">
+        <label for="pass1" class="form-label" id="passkey1">Password <span class="req">*</span></label>
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
+      <i class="fa-solid fa-eye" id="visibility-btn1"></i>
       <small>Error message</small>
       </div>
       
 
       <div class="form-div">
-        <input type="password" class="input-class" name="passwordkey2" id="pass2" autocomplete="off">
-        <label for="pass2" class="form-label" id="passkey2">Confirm your password</label>
-      <i class="fa-solid fa-eye" id="visibility-btn2"></i>
+        <input type="password" class="input-class" name="passwordkey2" id="pass2" autocomplete="off" placeholder="">
+        <label for="pass2" class="form-label" id="passkey2">Confirm your password <span class="req">*</span></label>
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
+      <i class="fa-solid fa-eye" id="visibility-btn2"></i>
       <small>Error message</small>
       </div>
       
@@ -133,7 +174,7 @@
       <div class="checkbox-form">
         <div class="check">
           <input type="checkbox" class="other-input" name="agree" id="agreefield">
-          <label for="agreefield">I agree with terms and conditions</label>
+          <label for="agreefield"> <a href="#">I agree with terms and conditions</a></label>
         </div>
        
       <i class="fa-solid fa-circle-check"></i>
@@ -143,13 +184,10 @@
 
       <button class="submit">Submit</button>
       
-      
-      
-      
-
-
     </form>
-  </section>
+  </div>
+    
+  
 
 
 
