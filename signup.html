@@ -28,33 +28,27 @@
   <section>
     <form action="#" id ="validation-form">
       <div class="form-div">
-        <label for="firstname" id="name">First name</label>
-      <input type="text" class="input-class" name="fnamefield" id ="firstname" placeholder="your name">
+        <input type="text" class="input-class" name="fnamefield" id ="firstname" autocomplete="off">
+        <label for="firstname" class="form-label" id="name">First name</label>
+      
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
       </div>
 
       <div class="form-div">
-        <label for="lastname" id="surname">Last name</label>
-      <input type="text" class="input-class" name="lnamefield" id="lastname" placeholder="your surname">
+        <input type="text" class="input-class" name="lnamefield" id="lastname" autocomplete="off">
+        <label for="lastname"  class="form-label" id="surname">Last name</label>
+      
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
       </div>
       
       <div class="form-div">
-        <label for="birthdate">Birth date</label>
-      <input type="date" class="input-class"  name="birthfield" id="birthdate">
-      <i class="fa-solid fa-circle-check"></i>
-      <i class="fa-solid fa-circle-exclamation"></i>
-      <small>Error message</small>
-      </div>
+        <input type="text" class="input-class"  name="birthfield" onfocus="(this.type='date')" onblur="if(!this.value) this.type='text'" id="birthdate" autocomplete="off">
+        <label for="birthdate" class="form-label">Birth date</label>
       
-
-      <div class="form-div">
-        <label for="residentcountry" id="country">Country</label>
-      <input type="text" class="input-class" name="livecountry" id="residentcountry" placeholder="country of residence">
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
@@ -62,8 +56,9 @@
       
 
       <div class="form-div">
-        <label for="residentcity" id="city">City</label>
-      <input type="text" class="input-class" name="livecity" id="residentcity" placeholder="city of residence">
+        <input type="text" class="input-class" name="livecountry" id="residentcountry" autocomplete="off">
+        <label for="residentcountry" class="form-label" id="country">Country</label>
+      
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
@@ -71,24 +66,38 @@
       
 
       <div class="form-div">
-        <label for="useremail" id="Email">Email</label>
-        <input type="email" class="input-class" name="youremail" id="useremail" placeholder="ex:my_email@yahoo.com">
+        <input type="text" class="input-class" name="livecity" id="residentcity" autocomplete="off">
+        <label for="residentcity" class="form-label" id="city">City</label>
+      
+      <i class="fa-solid fa-circle-check"></i>
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <small>Error message</small>
+      </div>
+      
+
+      <div class="form-div">
+        <input type="email" class="input-class" name="youremail" id="useremail" autocomplete="off">
+        <label for="useremail" class="form-label" id="Email">Email</label>
+        
         <i class="fa-solid fa-circle-check"></i>
         <i class="fa-solid fa-circle-exclamation"></i>
         <small>Error message</small>
       </div>
      
       <div class="form-div">
-        <label for="telephone" id="phonenumber">Phone</label>
-      <input type="tel" class="input-class" name="telephone" id="telephone" placeholder="ex: (+XXX)-(XXXXXX)">
+        <input type="tel" class="input-class" name="telephone" id="telephone" autocomplete="off">
+        <label for="telephone"  class="form-label" id="phonenumber">Phone</label>
+      
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
       </div>
       
       <div class="form-div">
-        <label for="pass1" id="passkey1">Password</label>
-      <input type="password" class="input-class" name="password-key1" id="pass1" placeholder="********">
+        <input type="password" class="input-class" name="password-key1" id="pass1" autocomplete="off">
+        <label for="pass1" class="form-label" id="passkey1">Password</label>
+       <i class="fa-solid fa-eye" id="visibility-btn1"></i>
+      
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
@@ -96,8 +105,9 @@
       
 
       <div class="form-div">
-        <label for="pass2" id="passkey2">Confirm your password</label>
-      <input type="password" class="input-class" name="passwordkey2" id="pass2" placeholder="********">
+        <input type="password" class="input-class" name="passwordkey2" id="pass2" autocomplete="off">
+        <label for="pass2" class="form-label" id="passkey2">Confirm your password</label>
+      <i class="fa-solid fa-eye" id="visibility-btn2"></i>
       <i class="fa-solid fa-circle-check"></i>
       <i class="fa-solid fa-circle-exclamation"></i>
       <small>Error message</small>
@@ -106,12 +116,12 @@
 
       <div class="form-select">
         <div class="gender">
-          <input type="radio" class="input-class" name="gender" id="maleradio">
+          <input type="radio" class="other-input" name="gender" id="maleradio">
           <label for="maleradio" id="radio1">Male</label>
         </div>
 
         <div class="gender">
-          <input type="radio" class="input-class" name="gender" id="femalegender">
+          <input type="radio" class="other-input" name="gender" id="femalegender">
           <label for="femalegender" id="radio2">Female</label>
         </div>
        
@@ -122,7 +132,7 @@
 
       <div class="checkbox-form">
         <div class="check">
-          <input type="checkbox" class="input-class" name="agree" id="agreefield">
+          <input type="checkbox" class="other-input" name="agree" id="agreefield">
           <label for="agreefield">I agree with terms and conditions</label>
         </div>
        
