@@ -1,6 +1,6 @@
 'use strict';
 
-// Totop scroll animation 
+// Totop scroll animation
 let topScroll = document.createElement('div');
 topScroll.classList.add('contbg');
 topScroll.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
@@ -12,7 +12,6 @@ topScroll.addEventListener('click', function () {
     behavior: 'smooth',
   });
 });
-
 
 // Home work 7:
 
@@ -69,8 +68,6 @@ formEl.addEventListener('submit', function (event) {
   // Clear input field after each 'add action'
   input.value = '';
 });
-
-
 
 let accordionlist = document
   .querySelectorAll('.acc-list-item')
@@ -363,9 +360,8 @@ filterOnkeyUp();
 focusSearch();
 clickOutside();
 
-
 // Import burger menu
 
-import{burgerAnimation, headerAnimation} from './burger.js';
+import { burgerAnimation, headerAnimation } from './burger.js';
 burgerAnimation();
 headerAnimation();

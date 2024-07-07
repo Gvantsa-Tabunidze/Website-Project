@@ -10,7 +10,7 @@ export const asyncFunction = async () => {
     const dataResponse = await axios.get(
       'https://faux-api.com/api/v1/honeyinfo_7192215413888481'
     );
-    console.log(dataResponse.data.result);
+    // console.log(dataResponse.data.result);
 
     dataResponse.data.result.forEach((element) => {
       const prodItemList = document.createElement('li');
