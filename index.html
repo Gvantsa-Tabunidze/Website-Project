@@ -22,7 +22,6 @@
 
 <body>
   
-   
   <header id="hdr">
     <div class="logo-div"><a href="#" class="logo">
       <img src="images/honeylogo.svg" alt="logo for honey maker">
@@ -30,14 +29,42 @@
 
     <nav class="navbar">
       <div class="home">
-        <li class="nav-item">
+        <li class="nav-home">
           <a href="./index.html" class = "nav-link"><i class="fa-solid fa-house"></i></a>
-        </li> 
-      </div>
+        </li>
+
+        <li class="language-selector">
+          <div class="select-box">
+            <div class="langContent">
+              <span class="selected"><div class="engflag"></div>English(US)</span>
+            </div>
+              <div class="caret"><i class="fa-solid fa-caret-down"></i></div>
+          </div>
+
+          <ul class="menu">
+            <li class="menu-item">
+              <div class="geoflag"></div>
+              <p class="text">Georgian(GE)</p>
+            </li>
+            <li class="active">
+              <div class="engflag"></div>
+              <p class="text">English(US)</p>
+            </li>
+            <li class="menu-item">
+              <div class="spainflag"></div>
+              <p class="text">Spanish(ES)</p>
+            </li>
+          </ul>
       
+        </li> 
+        
+
+        </div>
+
+
       <ul class="nav-menu">
    
-        <div class="othermenu">
+       
           <li class="nav-item">
             <a href="#" class = "nav-link">About us</a>
           </li>
@@ -47,7 +74,7 @@
           <li class="nav-item">
             <a href="#" class = "nav-link">Contact</a>
           </li>    
-        </div>
+     
             
       </ul>
      
@@ -60,6 +87,7 @@
       </div>
     </nav>
   </header>
+ 
 
     <div class ="hero-div" id="hero">
       <h1>We do not provide a good honey, we do the best one!</h1>
@@ -78,23 +106,14 @@
       </div>
 
 
-      <div class="user-info">
-        <ul id="ul-element"></ul>
-        <div class="pagination-wrapper">
-          <button class="arrow" id="prevButton"><span><i class="fa-solid fa-chevron-left"></i></span>
-          </button>
-          <button class="arrow" id="nextButton">
-            <span><i class="fa-solid fa-chevron-right"></i></span>
-          </button>
-        </div>
-      </div>
+    
 
       <div class="honey-product" id ="honey-product">
         <ul class = "menu-list" id="honey-list">
         </ul>
       </div>
       
-      <div class="post-container" id="post-wrapper">
+      <!-- <div class="post-container" id="post-wrapper">
         <div class="overflow" id="overflow-menu">
           <div class="post-content" id="post-content"></div>
           <div class="close" id="close-popup"><i class="fa-solid fa-xmark"></i></div>
@@ -115,7 +134,7 @@
             <button>Edit post</button>
           </form>
         </div>
-      </div>
+      </div> -->
 
  
       
@@ -124,6 +143,22 @@
   
 
     <section class="mainactions">
+<h2>Meet our happy users</h2>
+      <div class="user-info">
+        <ul id="ul-element"></ul>
+        <div class="pagination-wrapper">
+          <button class="arrow" id="prevButton"><span><i class="fa-solid fa-chevron-left"></i></span>
+          </button>
+          <button class="arrow" id="nextButton">
+            <span><i class="fa-solid fa-chevron-right"></i></span>
+          </button>
+        </div>
+      </div>
+      
+    
+    </section>
+
+    <div class="to-do">
       <h2>Honey list</h2>
       <div class="Honey-list-container">
         <form action="" id="formElement">
@@ -132,11 +167,8 @@
         </form>
         <button id="reset-all">Reset</button>
       </div>
-
-
       <ul id="ul-list"></ul>
-      
-    </section>
+    </div>
 
 
     <div class="accordion-holder">

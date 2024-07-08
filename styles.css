@@ -5,6 +5,8 @@ tetx color : #222f3e
 for headings : #f0932b
 */
 
+
+
 *,
 *::before,
 *::after {
@@ -19,12 +21,164 @@ header {
   height: 120px;
   /* box-shadow: 0px 0px 8px rgba(59,58,58); */
   align-content: center;
+ 
   position: fixed;
   width:100%;
   top: 0;
   left: 0;
   z-index: 2;
+  .fa-house {
+    color: white;
+  }
+  .home .nav-item:hover {
+    border-bottom: none;
 }
+.home {
+  display: flex;
+  align-items: center;
+  gap:40px;
+}
+
+
+.language-selector{
+ display: block;
+  position: relative;
+  font-family: 'Poppins';
+
+}
+.select-box{
+  position: relative;
+  background-color:white;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  padding: 0 8px;
+  cursor: pointer;
+  
+}
+
+.selected{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  font-size: 16px;
+
+}
+
+.selectBox-clicked {
+  border: 1px solid grey;
+  box-shadow: 0 8px 6px -6px #222f3e84;
+}
+.caret i {
+  color:#222f3e
+}
+.caret-active {
+transform: rotate(180deg);
+}
+
+.menu {
+  background-color:white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  box-shadow: 5px 5px 10px #222f3e5f;
+  visibility: hidden;
+}
+
+
+
+.menu-item{
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  height: 40px;
+  padding: 0 8px;
+}
+.active {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  height: 40px;
+  padding: 0 8px;
+  background-color: #ffeaa7 ;
+}
+
+
+.menu-item:hover {
+ background-color:  #ffeaa7  ;
+}
+
+
+.engflag{
+  border-radius: 16px;
+  background-image: url(./images/US.svg);
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  }
+
+  .geoflag{
+  border-radius: 16px;
+  background-image: url(./images/Georgia.svg);
+  background-size: cover;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  }
+
+  .spainflag{
+    border-radius: 16px;
+  background-image: url(./images/Spain.svg);
+  background-size: cover;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  }
+
+  .text{
+    color: #222f3e;
+  }
+ 
+
+  .show {
+    visibility: visible;
+  }
+
+  /* .lang-dropdown{
+    position: relative;
+    cursor: pointer;
+  } */
+  
+    /* .lang-dropdown:hover{
+   border-bottom: 1px solid white;
+  
+  } */
+  
+
+  .option-lang{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #222f3e;
+    font-family: 'Poppins';
+    height: 40px;
+    padding: 8px;
+   
+
+  }
+  .option-lang:hover{
+    background-color:#ffeaa7 ;
+  }
+}
+
 
 
 
@@ -41,14 +195,11 @@ header {
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  gap: 40px;
 }
 
 
-.nav-home .fa-house{
-  color: white;
-}
+
 
 
 .othermenu{
@@ -71,10 +222,13 @@ list-style: none;
   text-decoration: none;
   font-weight: 600;
   font-family:'Poppins';
+  padding-bottom: 8px;
+  
 }
 
 .nav-item a:hover {
  border-bottom: solid 1px #ffffff;
+ 
 }
 
 
@@ -125,8 +279,9 @@ a img {
   .nav-item a {
     color:#f9ca24;
     &:hover {
-      border-bottom: solid 1px #f0f8ff;
+      border-bottom: solid 1px #f9ca24;
     }
+   
   }
   a.logo {
     content: url('images/newlogo.svg');
@@ -141,21 +296,45 @@ a img {
   .logo-div {
     background-color:#222f3e;
   }
-  .nav-home .fa-house{
+  .fa-house{
     color:#f9ca24;
   }
 
+  
+  
+   
+   /* .lang-dropdown:hover{
+    border-bottom: 1px solid  #f9ca24;
+   
+   } */
+
+   
 }
+
+
+
+
 
 
  
 .hero-div {
   width: 100%;
-  min-height: 600px;
+  min-height: 500px;
   background-image: url('images/honey.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  flex-direction: column;
+ justify-content:flex-end;
+ align-items: center;
+ gap: 80px;
+ padding-bottom: 80px;
+ padding-left: 16px;
+ padding-right: 16px;
+ 
+ 
+
 }
 
 
@@ -167,12 +346,12 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  position: absolute;
+  /* position: absolute;
   top: 45%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   text-align: center;
-  width: max-content;
+  
 }
 
 
@@ -523,10 +702,10 @@ h3 {
   border: none;
   border-radius: 8px;
   padding:12px 24px;
-  position: absolute;
+  /* position: absolute;
   top: 80%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%); */
   transition: all 0.4s;
   
 
@@ -622,6 +801,7 @@ display: none;
 .textDiv{
   display: block;
   min-height: 56px;
+  text-align: start;
   
 }
 
@@ -945,7 +1125,8 @@ li {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-items: center;
+  gap: 24px;
+  
 }
 
 .dlt-button {
@@ -953,15 +1134,24 @@ li {
   height: 40px;
   background-color: transparent;
   border: none;
-  display:block;
   border-radius: 4px;
-  align-content: center;
+  position: relative;
 }
 
 
 
 .dlt-button:hover {
   background-color:#ffeaa7;
+}
+
+.fa-trash {
+  height: 20px;
+  width: 20px;
+  color: #222f3e;
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 #todo {
@@ -993,20 +1183,38 @@ li {
   color: #222f3e;
 }
 
-.list-item {
+
+#ul-list {
+  width: 100%;
+}
+#ul-list .list-item {
   height:48px;
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
- 
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 1px;
   color: #6B331A;
   text-transform: capitalize;
+  justify-content: space-between;
 }
+
+
+.to-do {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: start;
+ padding: 40px 80px;
+  max-width: 600px;
+  width: 100%;
+  
+}
+
+
 
 .btn-target-container {
   width: 48px;
@@ -1059,8 +1267,9 @@ li {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width:560px;
-  margin: 100px;
+  width:100%;
+  margin: 120px 0;
+  
 }
 
 
@@ -1157,7 +1366,7 @@ content: '\f077';
   .nav-menu {
     position:fixed;
     left: -100%;
-    top: 92px;
+    top: 120px;
     gap:0;
     flex-direction: column;
     background-color: white;
@@ -1171,9 +1380,14 @@ content: '\f077';
     width:max-content;
     justify-content: center;
   }
+
   .nav-menu.active {
     left: 0;
-  }
+    .nav-item {
+      color: #6B331A;
+    }
+
+    
 }
 
 
@@ -1188,4 +1402,5 @@ content: '\f077';
   .navbar {
     margin: 4px;
   }
+}
 }
