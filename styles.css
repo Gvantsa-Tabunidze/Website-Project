@@ -97,11 +97,11 @@ transform: rotate(180deg);
   align-items: center;
   height: 40px;
   padding: 0 8px;
+  cursor: pointer;
 }
 .active {
   display: flex;
   flex-direction: row;
-  gap: 12px;
   align-items: center;
   height: 40px;
   padding: 0 8px;
@@ -152,15 +152,7 @@ transform: rotate(180deg);
     visibility: visible;
   }
 
-  /* .lang-dropdown{
-    position: relative;
-    cursor: pointer;
-  } */
-  
-    /* .lang-dropdown:hover{
-   border-bottom: 1px solid white;
-  
-  } */
+
   
 
   .option-lang{
