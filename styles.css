@@ -39,136 +39,74 @@ header {
   gap:40px;
 }
 
-
-.language-selector{
- display: block;
+.dropdown {
   position: relative;
   font-family: 'Poppins';
-
+ width: 160px
 }
-.select-box{
-  position: relative;
-  background-color:white;
+
+.select {
+  background-color: white;
   display: flex;
-  border-radius: 8px;
   align-items: center;
-  padding: 0 8px;
+  justify-content: space-between;
+  padding: 8px 8px;
+  border-radius: 4px;
   cursor: pointer;
-  
 }
 
 .selected{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  height: 40px;
-  font-size: 16px;
-
+  font-size: 18px;
+  
 }
 
-.selectBox-clicked {
-  border: 1px solid grey;
-  box-shadow: 0 8px 6px -6px #222f3e84;
+.select-clicked  {
+ background-color: #eceae3;
 }
-.caret i {
-  color:#222f3e
+
+
+.select:hover {
+background-color:#ffeaa7 ;
 }
-.caret-active {
-transform: rotate(180deg);
+
+.fa-caret-down{
+  color: #222f3e;
+}
+
+.fa-caret-down-active {
+  transform: rotate(180deg);
 }
 
 .menu {
-  background-color:white;
-  border-radius: 8px;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  box-shadow: 5px 5px 10px #222f3e5f;
-  visibility: hidden;
+ border-radius: 8px;
+ min-height: 80px;
+ background-color: white;
+ position: absolute;
+ width: 100%;
+ visibility: hidden;
+
+}
+
+.menu-open {
+  visibility: visible;
 }
 
 
-
-.menu-item{
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  align-items: center;
-  height: 40px;
-  padding: 0 8px;
-  cursor: pointer;
-}
-.active {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 40px;
-  padding: 0 8px;
-  background-color: #ffeaa7 ;
+.menu-options{
+padding: 8px 8px;
+font-size: 18px;
 }
 
-
-.menu-item:hover {
- background-color:  #ffeaa7  ;
-}
-
-
-.engflag{
-  border-radius: 16px;
-  background-image: url(./images/US.svg);
-  background-size: cover;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  }
-
-  .geoflag{
-  border-radius: 16px;
-  background-image: url(./images/Georgia.svg);
-  background-size: cover;
-  background-position: center;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  }
-
-  .spainflag{
-    border-radius: 16px;
-  background-image: url(./images/Spain.svg);
-  background-size: cover;
-  background-position: center;
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  }
-
-  .text{
-    color: #222f3e;
-  }
- 
-
-  .show {
-    visibility: visible;
+.menu-options.active{
+background-color: #f0932b;
   }
 
 
-  
-
-  .option-lang{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #222f3e;
-    font-family: 'Poppins';
-    height: 40px;
-    padding: 8px;
-   
-
+.menu-options:hover{
+background-color:#ffeaa7 ;
   }
-  .option-lang:hover{
-    background-color:#ffeaa7 ;
-  }
+
+
 }
 
 

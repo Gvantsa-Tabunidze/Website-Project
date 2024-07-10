@@ -2,24 +2,29 @@
 
 //languiage dropdwons
 
-export function dropdown(){
-const dropdown = document.querySelector('.select-box');
-const menu = document.querySelector('.menu')
-const caret = document.querySelector('.caret');
-const selectBox = document.querySelector('.select-box');
-const options = document.querySelectorAll('.menu-list');
-const selected = document.querySelector('.selected');
-// const selectedOption = document.querySelector('.selected');
-const innerP = document.querySelector('.text');
+export function dropdown() {
+  const select = document.querySelector('.select');
+  const caret = document.querySelector('.fa-caret-down');
+  const menu = document.querySelector('.menu');
+  const options = document.querySelectorAll('.menu-options');
+  const selected = document.querySelector('.selected');
 
+  select.addEventListener('click', () => {
+    select.classList.toggle('select-clicked');
+    caret.classList.toggle('fa-caret-down-active');
+    menu.classList.toggle('menu-open');
+  });
 
-dropdown.addEventListener('click', ()=> {
-  menu.classList.toggle('show');
-  caret.classList.toggle('caret-active');
-  selectBox.classList.toggle('selectBox-clicked');
-})
-
-
- 
+  options.forEach((item) => {
+    item.addEventListener('click', () => {
+      selected.innerText = item.innerText;
+      select.classList.remove('select-clicked');
+      caret.classList.remove('fa-caret-down-active');
+      menu.classList.remove('menu-open');
+      options.forEach((item) => {
+        item.classList.remove('active');
+      });
+      item.classList.add('active');
+    });
+  });
 }
-

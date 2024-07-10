@@ -366,8 +366,6 @@ import { burgerAnimation, headerAnimation } from './burger.js';
 burgerAnimation();
 headerAnimation();
 
-
-
 // Import dropdwon
-import{dropdown} from './dropdown.js';
+import { dropdown } from './dropdown.js';
 dropdown();
