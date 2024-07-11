@@ -6,7 +6,6 @@ for headings : #f0932b
 */
 
 
-
 *,
 *::before,
 *::after {
@@ -16,6 +15,10 @@ for headings : #f0932b
 }
 
 
+.customBody {
+background-image: url('./images/honeyflower.jpg');
+object-fit:cover;
+  }
 
 header {
   height: 120px;
@@ -84,6 +87,7 @@ background-color:#ffeaa7 ;
  position: absolute;
  width: 100%;
  visibility: hidden;
+ box-shadow: 5px 5px 20px  #222f3e25;
 
 }
 
@@ -230,14 +234,6 @@ a img {
     color:#f9ca24;
   }
 
-  
-  
-   
-   /* .lang-dropdown:hover{
-    border-bottom: 1px solid  #f9ca24;
-   
-   } */
-
    
 }
 
@@ -290,7 +286,7 @@ h1 {
 .formValidation{
  height: 100%;
  background-image: url('./images/honeycomb.jpg');
- padding: 160px 0 20px 0;
+ padding: 240px 0 20px 0;
 }
 
 
@@ -805,19 +801,41 @@ span {
   height: 200px;
 }
 
+
+.product-holder{
+min-height: 200px;
+margin: 280px auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 24px;
+width: 85%;
+}
+
+
+
+.honey-product{
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+
+}
+
+
 .menu-list {
- max-width: 1120px;
-  min-height: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 80px;
-  margin: auto;
+width: 100%;
+min-height: 200px;
+display: flex;
+flex-wrap: wrap;
+gap: 120px;
+justify-content: center;
 }
 
 
 .productCard {
-  text-align: center;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -831,11 +849,61 @@ span {
   border: 1px solid #222f3e80;
   position:absolute;
   top: -250px;
-  transform: translate(-24%);
   visibility: hidden;
+
  
-  
 }
+
+
+
+.breadcrumbs{
+  padding: 4px;
+  font-family: 'Poppins';
+  position: absolute;
+  left: 80px;
+  top: 160px;
+}
+
+.breadcrumbs__item{
+display: inline;
+}
+
+
+.breadcrumbs__item:not(:last-of-type)::after {
+  content: '\203a';
+  margin: 0 4px;
+  color:white;
+}
+
+
+
+
+
+.breadcrumbs__link{
+  text-decoration: none;
+  color: white;
+}
+
+
+.breadcrumbs__link:hover{
+text-decoration: underline;
+}
+
+
+
+.breadcrumbs__link.current{
+ font-weight: bold;
+ cursor:default;
+&:hover{
+  text-decoration: none;
+}
+}
+
+
+
+
+
+
 
 .details.active {
   visibility: visible;
@@ -1037,10 +1105,6 @@ width: 95%;
 position: relative;
 margin: 80px 0;
 text-align: center;
-
-
-
-
 }
 
 
@@ -1049,8 +1113,9 @@ li {
   flex-direction: column;
   gap: 16px;
   font-size: 16px;
-
 }
+
+
 .Honey-list-container{
   display: flex;
   width: 100%;
@@ -1261,6 +1326,54 @@ content: '\f077';
 }
 
 
+
+/* Slider */
+
+.splide{
+  margin: 80px 0;
+  gap: 24px;
+}
+
+.splide h1 {
+  color: #f0932b;
+  text-transform: capitalize;
+}
+
+.splide__track {
+  width:100%;
+}
+
+
+.splide__slide img {
+ height: 400px;
+ object-fit:cover;
+}
+
+.splide__arrow{
+ background-color:#f9ca24;
+ width: 40px;
+ height: 40px;
+ 
+}
+
+ .fa-chevron-left {
+ font-size: 24px;
+ color:#222f3e;
+}
+
+.fa-chevron-right{
+  font-size: 24px;
+  color: #222f3e;
+
+  
+}
+
+.splide__pagination__page  {
+background-color: #222f3e;
+}
+.splide__pagination__page.is-active {
+background-color: #f0932b;
+}
 
 
 

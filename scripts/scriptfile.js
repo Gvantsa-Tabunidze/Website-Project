@@ -369,3 +369,8 @@ headerAnimation();
 // Import dropdwon
 import { dropdown } from './dropdown.js';
 dropdown();
+
+// Import slider
+
+import { mySlider } from './slider.js';
+mySlider();

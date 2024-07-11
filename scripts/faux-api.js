@@ -13,24 +13,22 @@ export function getProductInfo(url, callback) {
     })
     .catch(function (error) {
       // handle error
-      if(error===404) {
+      if (error === 404) {
         const list = document.createElement('li');
         const errorHeading = document.createElement('p');
-        errorHeading.innerText = 'Page not found!'
+        errorHeading.innerText = 'Page not found!';
         list.appendChild(errorHeading);
         ulHoney.appendChild(list);
       } else {
-         const list = document.createElement('li');
+        const list = document.createElement('li');
         const errorHeading = document.createElement('p');
-        errorHeading.innerText = 'Page not found!'
+        errorHeading.innerText = 'Page not found!';
         list.appendChild(errorHeading);
         ulHoney.appendChild(list);
       }
 
       console.log(error);
-
-      }
-    )
+    })
     .finally(function () {
       // always executed
     });

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product page</title>
+
+
+  <!-- This is Eric Meyer's reset -->
+  <link rel="stylesheet" href="css-reset.css">
+
+ 
+  <!-- Font-awesome kit -->
+  <script src="https://kit.fontawesome.com/ed83a1faf6.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <!-- This is my own stylesheet -->
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="customBody">
+
+  <header id="hdr">
+    <div class="logo-div"><a href="#" class="logo">
+      <img src="images/honeylogo.svg" alt="logo for honey maker">
+    </a></div>
+
+    <nav class="navbar">
+      <div class="home">
+        <li class="nav-home">
+          <a href="./index.html" class = "nav-link"><i class="fa-solid fa-house"></i></a>
+        </li>
+
+        
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">English(EN)</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <ul class="menu">
+              <li class="menu-options">Georgian(GE)</li>
+              <li class="menu-options">Spanish(ES)</li>
+              <li class="menu-options active">English(EN)</li>
+              <li class="menu-options">Arabic(AR)</li>
+              <li class="menu-options">German(GE)</li>
+            </ul>
+          </div>
+        
+      
+        </div>
+
+
+
+      <ul class="nav-menu">
+   
+       
+          <li class="nav-item">
+            <a href="#" class = "nav-link">About us</a>
+          </li>
+          <li class="nav-item">
+            <a href="./product_p.html" class = "nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class = "nav-link">Contact</a>
+          </li>          
+      </ul>
+     
+  
+
+      <div class="burger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+
+ 
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item">
+    <a href="./index.html" class="breadcrumbs__link">Home</a>
+  </li>
+  <li class="breadcrumbs__item">
+    <a href="#" class="breadcrumbs__link current">Products</a>
+  </li>
+</ul>
+
+
+<div class="product-holder">
+  <h2>Best sellers</h2>
+  <div class="honey-product" id ="honey-product">
+    
+    <ul class = "menu-list" id="honey-list">
+    </ul>
+  </div>
+</div>
+
+
+
+
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script type="module" src="scripts/faux-api.js" ></script>
+</body>
+</html>
