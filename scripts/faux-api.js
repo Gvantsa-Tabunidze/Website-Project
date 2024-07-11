@@ -94,3 +94,12 @@ function createDivElement(element) {
   fragment.appendChild(productCard);
   ulHoney.appendChild(fragment);
 }
+
+// nav Open function
+
+import { navOpen } from './burger.js';
+navOpen();
+
+// Import dropdwon
+import { dropdown } from './dropdown.js';
+dropdown();

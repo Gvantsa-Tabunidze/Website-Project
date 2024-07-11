@@ -216,3 +216,17 @@ function passwordRegex(password) {
     password
   );
 }
+
+
+
+
+
+// nav Open function
+
+import{navOpen} from './burger.js';
+navOpen();
+
+
+// Import dropdwon
+import { dropdown } from './dropdown.js';
+dropdown();

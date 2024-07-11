@@ -21,17 +21,16 @@ object-fit:cover;
   }
 
 header {
+  background-color: white;
   height: 120px;
-  /* box-shadow: 0px 0px 8px rgba(59,58,58); */
   align-content: center;
- 
   position: fixed;
   width:100%;
   top: 0;
   left: 0;
   z-index: 2;
   .fa-house {
-    color: white;
+    color: #222f3e;
   }
   .home .nav-item:hover {
     border-bottom: none;
@@ -49,13 +48,14 @@ header {
 }
 
 .select {
-  background-color: white;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 8px;
-  border-radius: 4px;
   cursor: pointer;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .selected{
@@ -69,7 +69,7 @@ header {
 
 
 .select:hover {
-background-color:#ffeaa7 ;
+border-bottom: #222f3e 1px solid;
 }
 
 .fa-caret-down{
@@ -111,6 +111,60 @@ background-color:#ffeaa7 ;
   }
 
 
+  .fa-chevron-down{
+    color: #222f3e;
+    margin-left: 8px;
+    font-size: 12px;
+  }
+
+  .submenu{
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: 0;
+    top: 120px;
+    display:flex;
+    justify-content: center;
+    gap: 160px;
+    align-items: center;
+    font-family: 'Poppins';
+    height: 200px;
+    visibility: hidden;
+    box-shadow: 5px 5px 10px #222f3e25;
+    }
+
+    .submenu-open {
+      visibility: visible;
+    }
+
+    .column{
+      display: flex;
+      flex-direction: column;
+      justify-items: center
+    
+    }
+    .submenu-item{
+      height: 56px;
+     display: inline-block;
+     line-height: 56px;
+    }
+   
+
+   .subnavLink {
+      text-decoration: none;
+      color: #222f3e;
+      font-size: 18px;
+    }
+    .subnavLink:hover {
+      color: #f0932b !important;
+      text-decoration: none !important;
+     }
+
+     .submenu-item a:hover {
+      border-bottom: none;
+       
+       }
+    
 }
 
 
@@ -152,16 +206,21 @@ list-style: none;
 }
 
 .nav-link {
-  color: #ffffff;
+  color: #222f3e;
   text-decoration: none;
   font-weight: 600;
   font-family:'Poppins';
   padding-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
   
 }
 
 .nav-item a:hover {
- border-bottom: solid 1px #ffffff;
+ border-bottom: solid 1px #222f3e;
  
 }
 
@@ -187,7 +246,6 @@ list-style: none;
 .logo-div{
   height: 120px;
   width: 100px;
-  background-color: #ffffff;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   position: absolute;
@@ -210,12 +268,15 @@ a img {
   
 .newHeader {
   background-color: #222f3e;
-  .nav-item a {
+  .nav-item .nav-link { 
     color:#f9ca24;
     &:hover {
       border-bottom: solid 1px #f9ca24;
-    }
-   
+    } 
+    
+
+
+    
   }
   a.logo {
     content: url('images/newlogo.svg');
@@ -233,8 +294,53 @@ a img {
   .fa-house{
     color:#f9ca24;
   }
+  
+  
+  .fa-chevron-down{
+    color:#f9ca24;
+    margin-left: 8px;
+    font-size: 12px;
+  }
 
-   
+  .submenu{
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: 0;
+    top: 120px;
+    display:flex;
+    justify-content: center;
+    gap: 160px;
+    align-items: center;
+    font-family: 'Poppins';
+    height: 200px;
+    }
+
+    .column{
+      display: flex;
+      flex-direction: column;
+      justify-items: center
+    
+    }
+    .submenu-item{
+      height: 56px;
+     display: inline-block;
+     line-height: 56px;
+    
+    }
+
+   .subnavLink {
+     
+      color: #222f3e !important;
+      font-size: 18px; 
+     
+    }
+    .subnavLink:hover {
+     color: #f0932b !important;
+     text-decoration: none !important;
+     
+    }
+  
 }
 
 
@@ -1345,14 +1451,16 @@ content: '\f077';
 
 
 .splide__slide img {
- height: 400px;
+ height: 600px;
  object-fit:cover;
+ 
 }
 
 .splide__arrow{
  background-color:#f9ca24;
  width: 40px;
  height: 40px;
+
  
 }
 
@@ -1418,11 +1526,12 @@ background-color: #f0932b;
     padding: 16px 0;
   }
 
-  .nav-item {
+  /* .nav-item {
     height: 40px;
     width:max-content;
     justify-content: center;
-  }
+    align-items: center;
+  } */
 
   .nav-menu.active {
     left: 0;

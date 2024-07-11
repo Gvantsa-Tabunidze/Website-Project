@@ -374,3 +374,8 @@ dropdown();
 
 import { mySlider } from './slider.js';
 mySlider();
+
+// nav Open function
+
+import{navOpen} from './burger.js';
+navOpen();

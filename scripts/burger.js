@@ -34,3 +34,16 @@ window.addEventListener('scroll', function () {
 });
 }
 
+
+// navmenu dropdown
+
+
+const submenu = document.querySelector('.submenu');
+const navItem = document.getElementById('products');
+
+export function navOpen() {
+  navItem.addEventListener('click', function() {
+    submenu.classList.toggle('submenu-open');
+  })
+}
+
