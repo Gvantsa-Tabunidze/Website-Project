@@ -42,6 +42,7 @@ header {
 }
 
 .dropdown {
+ 
   position: relative;
   font-family: 'Poppins';
  width: 160px
@@ -64,7 +65,7 @@ header {
 }
 
 .select-clicked  {
- background-color: #eceae3;
+ background-color: #ffeaa7;
 }
 
 
@@ -81,13 +82,15 @@ border-bottom: #222f3e 1px solid;
 }
 
 .menu {
- border-radius: 8px;
+ border-bottom-left-radius: 8px;
+ border-bottom-right-radius: 8px;
  min-height: 80px;
  background-color: white;
  position: absolute;
  width: 100%;
  visibility: hidden;
  box-shadow: 5px 5px 20px  #222f3e25;
+ overflow: hidden;
 
 }
 
@@ -274,9 +277,6 @@ a img {
       border-bottom: solid 1px #f9ca24;
     } 
     
-
-
-    
   }
   a.logo {
     content: url('images/newlogo.svg');
@@ -326,20 +326,32 @@ a img {
       height: 56px;
      display: inline-block;
      line-height: 56px;
-    
     }
 
    .subnavLink {
-     
       color: #222f3e !important;
       font-size: 18px; 
-     
     }
     .subnavLink:hover {
      color: #f0932b !important;
      text-decoration: none !important;
-     
     }
+
+
+    .selected {
+    color: #f9ca24;
+    }
+
+    .fa-caret-down{
+      color:  #f9ca24;
+    }
+    .select:hover {
+      border-bottom: #f9ca24 1px solid;
+      }
+
+      .select-clicked  {
+        background-color: white;
+       }
   
 }
 
@@ -716,6 +728,7 @@ right: 24px;
 }
 
 h2 {
+  font-family: 'Poppins';
   font-size: 1.8rem;
   color:#f0932b;
   text-align: center;
@@ -915,7 +928,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 24px;
-width: 85%;
+width: 95%;
 }
 
 
@@ -1374,14 +1387,77 @@ li {
 }
 
 
+.aboutUs{
+max-width: 800px;
+width: 95%;
+position: relative;
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+
+
+.dimm{
+  background-color: #222f3e8d;
+  
+}
+
+.paragr{
+  background-image: url('https://rurallivingtoday.com/wp-content/uploads/how-long-do-honey-bees-live-1.jpeg');
+  background-repeat: no-repeat;
+  object-fit:cover;
+  color: white;
+  font-family: 'Poppins';
+  width: 100%;
+  min-height: 160px;
+}
+
+
+.about{
+padding: 56px;
+}
+
+
+.learn-more{
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins';
+  border-radius: 8px;
+  color: #f9ca24;
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  right: 24px;
+  
+}
+
+.learn-more i {
+font-size: 12px;
+color: #f9ca24;
+}
+
+.learn-more:hover{
+ opacity: 50%;
+}
+
+
+
+h4 {
+  font-family: 'Poppins';
+font-weight: bold;
+color: #222f3e;
+}
+
 .accordion-holder {
   max-width:800px;
-  width: 100%;
-  margin: 0 50px;
- padding: 0 16px;
-  background-color:#ffeaa7;
-
-  
+  width: 95%;
+  margin: 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .accordion-title {
@@ -1390,7 +1466,6 @@ li {
 
 .accordion-title::before {
 font-family: "Font Awesome 5 Free";
-font-weight: 900;
 content: "\f078";
 position: absolute;
 top: 50%;
@@ -1403,7 +1478,7 @@ right:0;
   width: 100%;
   min-height: 50px;
   display: none;
-  font-family:'Roboto', sans-serif;
+  font-family:'Poppins';
   font-size: 16px;
   padding-top: 16px;
   color: #222f3e;
@@ -1413,8 +1488,7 @@ right:0;
 
 
 .acc-list-item {
-padding-top: 16px;
-padding-bottom: 16px;
+padding: 24px 24px;
 cursor: pointer;
 width: 100%;
 border-bottom:#b6bfca solid 0.5px;

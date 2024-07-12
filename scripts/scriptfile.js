@@ -344,9 +344,9 @@ getEmployeeInfo(currentPage);
 //     });
 // });
 
-// Server data import
-import { getProductInfo } from './faux-api.js';
-getProductInfo();
+// // Server data import
+// import { getProductInfo } from './faux-api.js';
+// getProductInfo();
 
 // Import search filter
 import {
@@ -377,5 +377,5 @@ mySlider();
 
 // nav Open function
 
-import{navOpen} from './burger.js';
+import { navOpen } from './burger.js';
 navOpen();

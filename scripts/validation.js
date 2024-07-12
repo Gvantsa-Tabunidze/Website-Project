@@ -1,7 +1,6 @@
 'use strict';
 
-
-import{burgerAnimation, headerAnimation} from './burger.js';
+import { burgerAnimation, headerAnimation } from './burger.js';
 burgerAnimation();
 headerAnimation();
 
@@ -132,8 +131,6 @@ function setSuccessFor(input, message) {
   smallText.innerText = message;
 }
 
-
-
 function radioError(input, message) {
   const radioInput = document.querySelector('.form-select');
   radioInput.classList.add('error');
@@ -162,48 +159,42 @@ function checkboxSuccess(input, message) {
   checkboxSmall.innerText = message;
 }
 
-
 const visibilityBtn1 = document.getElementById('visibility-btn1');
 const visibilityBtn2 = document.getElementById('visibility-btn2');
 visibilityBtn1.addEventListener('click', showHide1);
 visibilityBtn2.addEventListener('click', showHide2);
 
-function showHide1(){
-    if(pass1.type==='password') {
-      pass1.type='text';
-      visibilityBtn1.classList.remove('fa-eye');
-      visibilityBtn1.classList.add('fa-eye-slash'); 
-    } else {
-      pass1.type='password';
-      visibilityBtn1.classList.remove('fa-eye-slash');
-      visibilityBtn1.classList.add('fa-eye'); 
-    }
-}
-
-function showHide2() {
-  if(pass2.type==='password') {
-    pass2.type='text';
-    visibilityBtn2.classList.remove('fa-eye');
-    visibilityBtn2.classList.add('fa-eye-slash'); 
+function showHide1() {
+  if (pass1.type === 'password') {
+    pass1.type = 'text';
+    visibilityBtn1.classList.remove('fa-eye');
+    visibilityBtn1.classList.add('fa-eye-slash');
   } else {
-    pass2.type='password';
-    visibilityBtn2.classList.remove('fa-eye-slash');
-    visibilityBtn2.classList.add('fa-eye'); 
+    pass1.type = 'password';
+    visibilityBtn1.classList.remove('fa-eye-slash');
+    visibilityBtn1.classList.add('fa-eye');
   }
 }
 
+function showHide2() {
+  if (pass2.type === 'password') {
+    pass2.type = 'text';
+    visibilityBtn2.classList.remove('fa-eye');
+    visibilityBtn2.classList.add('fa-eye-slash');
+  } else {
+    pass2.type = 'password';
+    visibilityBtn2.classList.remove('fa-eye-slash');
+    visibilityBtn2.classList.add('fa-eye');
+  }
+}
 
+pass1.addEventListener('focus', function (e) {
+  visibilityBtn1.style.visibility = 'visible';
+});
 
-pass1.addEventListener('focus', function(e) {
-visibilityBtn1.style.visibility='visible';
-})
-
-pass2.addEventListener('focus', function(e) {
-  visibilityBtn2.style.visibility='visible';
-  })
-
-
-
+pass2.addEventListener('focus', function (e) {
+  visibilityBtn2.style.visibility = 'visible';
+});
 
 function emailRegex(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
@@ -217,15 +208,10 @@ function passwordRegex(password) {
   );
 }
 
-
-
-
-
 // nav Open function
 
-import{navOpen} from './burger.js';
+import { navOpen } from './burger.js';
 navOpen();
-
 
 // Import dropdwon
 import { dropdown } from './dropdown.js';

@@ -103,3 +103,8 @@ navOpen();
 // Import dropdwon
 import { dropdown } from './dropdown.js';
 dropdown();
+
+
+import { burgerAnimation, headerAnimation } from './burger.js';
+burgerAnimation();
+headerAnimation();
