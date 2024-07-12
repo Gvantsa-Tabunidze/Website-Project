@@ -1507,6 +1507,9 @@ content: '\f077';
 
 
 
+
+
+
 /* Slider */
 
 .splide{
@@ -1556,6 +1559,11 @@ background-color: #222f3e;
 .splide__pagination__page.is-active {
 background-color: #f0932b;
 }
+
+
+
+/* Cookie */
+
 
 
 

@@ -379,3 +379,9 @@ mySlider();
 
 import { navOpen } from './burger.js';
 navOpen();
+
+
+// Import cookie 
+
+import {cookieBanner} from './cookies.js';
+cookieBanner();
