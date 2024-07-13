@@ -19,6 +19,35 @@ export function burgerAnimation() {
   );
 }
 
+// navmenu dropdown
+
+
+
+// export function navOpen() {
+// const submenu = document.querySelector('.submenu');
+// const navItem = document.getElementById('products');
+//   navItem.addEventListener('click', function () {
+//     submenu.classList.toggle('submenu-open');
+//   });
+
+// }
+
+
+
+// // nav menu dropdwon on mobile
+// const submenuMob = document.querySelector('.submenu-mob');
+// const navLinkOnMob = document.getElementById('products');
+
+// navLinkOnMob.addEventListener('click', ()=>{
+//   submenu.classList.remove('submenu-open');
+//   submenuMob.classList.toggle('.submenu-mob-open');
+// })
+
+
+
+
+
+
 // Header bg on scroll
 
 export function headerAnimation() {
@@ -29,16 +58,5 @@ export function headerAnimation() {
     } else {
       header.classList.remove('newHeader');
     }
-  });
-}
-
-// navmenu dropdown
-
-const submenu = document.querySelector('.submenu');
-const navItem = document.getElementById('products');
-
-export function navOpen() {
-  navItem.addEventListener('click', function () {
-    submenu.classList.toggle('submenu-open');
   });
 }

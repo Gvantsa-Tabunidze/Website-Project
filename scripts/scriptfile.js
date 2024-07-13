@@ -367,21 +367,17 @@ burgerAnimation();
 headerAnimation();
 
 // Import dropdwon
-import { dropdown } from './dropdown.js';
+import { dropdown, mobDropdwon } from './dropdown.js';
 dropdown();
+mobDropdwon();
 
 // Import slider
 
 import { mySlider } from './slider.js';
 mySlider();
 
-// nav Open function
 
-import { navOpen } from './burger.js';
-navOpen();
+// Import cookie
 
-
-// Import cookie 
-
-import {cookieBanner} from './cookies.js';
+import { cookieBanner } from './cookies.js';
 cookieBanner();

@@ -1,6 +1,6 @@
 'use strict';
 
-//languiage dropdwons
+//language dropdwons for desktop
 
 export function dropdown() {
   const select = document.querySelector('.select');
@@ -27,4 +27,32 @@ export function dropdown() {
       item.classList.add('active');
     });
   });
+}
+
+// dropdown for mobile
+export function mobDropdwon() {
+  const mobSelect = document.querySelector('.select-mob');
+  const mobMenu = document.querySelector('.menu-mob');
+  const mobOption = document.querySelectorAll('.mobMenu-options');
+  const mobSelected = document.querySelector('.selected-mob');
+  const caretMob = document.querySelector('.mob');
+
+  mobSelect.addEventListener('click', () => {
+    mobSelect.classList.toggle('select-mob-clicked');
+    caretMob.classList.toggle('mob-active');
+    mobMenu.classList.toggle('mobMenu-open');
+  });
+
+  mobOption.forEach(element=>{
+    element.addEventListener('click', ()=>{
+      mobSelected.innerText = element.innerText;
+      mobSelect.classList.remove('select-mob-clicked');
+      caretMob.classList.remove('mob-active');
+      mobMenu.classList.remove('mobMenu-open');
+      mobOption.forEach(element =>{
+        element.classList.remove('active');
+      })
+      element.classList.add('active');
+    })
+  })
 }

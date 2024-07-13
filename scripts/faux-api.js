@@ -95,14 +95,12 @@ function createDivElement(element) {
   ulHoney.appendChild(fragment);
 }
 
-// nav Open function
 
-import { navOpen } from './burger.js';
-navOpen();
 
 // Import dropdwon
-import { dropdown } from './dropdown.js';
+import { dropdown, mobDropdwon} from './dropdown.js';
 dropdown();
+mobDropdwon();
 
 
 import { burgerAnimation, headerAnimation } from './burger.js';

@@ -208,11 +208,8 @@ function passwordRegex(password) {
   );
 }
 
-// nav Open function
-
-import { navOpen } from './burger.js';
-navOpen();
 
 // Import dropdwon
-import { dropdown } from './dropdown.js';
+import { dropdown,mobDropdwon} from './dropdown.js';
 dropdown();
+mobDropdwon();
