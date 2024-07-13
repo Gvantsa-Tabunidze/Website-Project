@@ -59,14 +59,12 @@ width: 160px
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 40px;
   padding: 8px 8px;
   cursor: pointer;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  img{
-    height: 20px;
-    margin-right: 4px;
-  }
+ 
 }
 
 .selected{
@@ -167,8 +165,9 @@ border-bottom: #222f3e 1px solid;
  }
 
 
- .selected-mob{
+ .select-mob{
   font-size: 18px;
+  height: 40px;
 }
 
 
@@ -429,8 +428,8 @@ a img {
     &:hover {
       border-bottom: solid 1px #f9ca24;
     } 
-    
   }
+
   a.logo {
     content: url('images/newlogo.png');
     width: 80px;
@@ -537,9 +536,6 @@ a img {
  padding-bottom: 80px;
  padding-left: 16px;
  padding-right: 16px;
- 
- 
-
 }
 
 
@@ -551,10 +547,7 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  /* position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+ 
   text-align: center;
   
 }
@@ -1902,6 +1895,7 @@ p{
 .dropdown-mob{
 display: block !important;
 }
+
 
 .dropdown{
   display: none;
