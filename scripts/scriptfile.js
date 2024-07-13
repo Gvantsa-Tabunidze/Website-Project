@@ -4,7 +4,7 @@
 let topScroll = document.createElement('div');
 topScroll.classList.add('contbg');
 topScroll.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
-document.querySelector('.btn-target-container').appendChild(topScroll);
+document.querySelector('.scroll-btn').appendChild(topScroll);
 
 topScroll.addEventListener('click', function () {
   window.scrollTo({
