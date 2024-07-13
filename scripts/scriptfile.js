@@ -104,6 +104,9 @@ function getEmployeeInfo(page) {
         let li = document.createElement('li');
         let img = document.createElement('img');
         img.src = element.avatar;
+        img.style.height = '128px';
+        img.style.width = '128px';
+        img.style.objectFit = 'cover';
         let pElement = document.createElement('p');
         pElement.innerText = `${element.first_name} ${element.last_name}`;
         li.appendChild(img);
@@ -375,7 +378,6 @@ mobDropdwon();
 
 import { mySlider } from './slider.js';
 mySlider();
-
 
 // Import cookie
 
