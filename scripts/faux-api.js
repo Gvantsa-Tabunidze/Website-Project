@@ -3,9 +3,9 @@
 // npm axios
 
 const ulHoney = document.getElementById('honey-list');
-let loader = false;
+
 export function getProductInfo(url, callback) {
-  loader = true;
+ 
   axios
     .get(url)
     .then(function (response) {
@@ -32,7 +32,6 @@ export function getProductInfo(url, callback) {
     })
     .finally(function () {
       // always executed
-      loader = false;
     });
 }
 
@@ -85,14 +84,12 @@ function createDivElement(element) {
     console.log(newLink);
     getProductInfo(newLink, function (dataInfo) {
       // console.log(dataInfo.data.result);
-      dataInfo.data.result;
+     
 
       contentDiv.innerHTML = '';
       const prodTitle = document.createElement('h3');
-      let { description, flower_base, id, image, name, origin, price } =
-        dataInfo.data.result[0];
-
-      // console.log(infoObj);
+      let {description, flower_base, id, image, name, origin, price} =
+      dataInfo.data.result[0];
 
       prodTitle.innerText = name;
       contentDiv.appendChild(prodTitle);
@@ -100,6 +97,10 @@ function createDivElement(element) {
       pDescr.innerText = description;
       pDescr.classList.add('parStyle');
       contentDiv.appendChild(pDescr);
+      const ingridients = document.createElement('p');
+      ingridients.innerText = flower_base;
+      ingridients.classList.add('ingridients');
+      contentDiv.appendChild(ingridients);
     });
   });
   productCard.addEventListener('mouseout', function () {
