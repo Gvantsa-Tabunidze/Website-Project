@@ -3,8 +3,9 @@
 // npm axios
 
 const ulHoney = document.getElementById('honey-list');
-
+let loader = false;
 export function getProductInfo(url, callback) {
+  loader = true;
   axios
     .get(url)
     .then(function (response) {
@@ -31,6 +32,7 @@ export function getProductInfo(url, callback) {
     })
     .finally(function () {
       // always executed
+      loader = false;
     });
 }
 
@@ -59,7 +61,7 @@ function createDivElement(element) {
   price.innerText = element.price;
   price.classList.add('price');
   const subTitle = document.createElement('p');
-  subTitle.innerText=element.origin;
+  subTitle.innerText = element.origin;
   subTitle.classList.add('origin');
   const descrDiv = document.createElement('div');
   descrDiv.classList.add('details');
@@ -73,43 +75,45 @@ function createDivElement(element) {
   productCard.appendChild(price);
   productCard.appendChild(descrDiv);
 
-  // productCard.addEventListener('mouseover', function () {
-  //   // console.log(this);
-  //   // contentDiv.innerHTML = '';
-  //   const cardId = this.getAttribute('product-id');
-  //   // console.log(cardId);
-  //   descrDiv.classList.add('active');
-  //   const newLink = `https://faux-api.com/api/v1/honeyinfo_7192215413888481/${cardId}`;
-  //   console.log(newLink);
-  //   getProductInfo(newLink, function (dataInfo) {
-  //     console.log(dataInfo.data.result);
-  //     dataInfo.data.result;
+  productCard.addEventListener('mouseover', function () {
+    // console.log(this);
+    // contentDiv.innerHTML = '';
+    const cardId = this.getAttribute('product-id');
+    // console.log(cardId);
+    descrDiv.classList.add('active');
+    const newLink = `https://faux-api.com/api/v1/honeyinfo_7192215413888481/${cardId}`;
+    console.log(newLink);
+    getProductInfo(newLink, function (dataInfo) {
+      // console.log(dataInfo.data.result);
+      dataInfo.data.result;
 
-  //     contentDiv.innerHTML = '';
-  //     const prodTitle = document.createElement('h3');
-  //     prodTitle.innerText = dataInfo.name;
-  //     contentDiv.appendChild(prodTitle);
-  //     const pDescr = document.createElement('p');
-  //     pDescr.innerText = dataInfo.description;
-  //     pDescr.classList.add('parStyle');
-  //     contentDiv.appendChild(pDescr);
-  //   });
-  // });
-  // productCard.addEventListener('mouseout', function () {
-  //   descrDiv.classList.remove('active');
-  // });
+      contentDiv.innerHTML = '';
+      const prodTitle = document.createElement('h3');
+      let { description, flower_base, id, image, name, origin, price } =
+        dataInfo.data.result[0];
+
+      // console.log(infoObj);
+
+      prodTitle.innerText = name;
+      contentDiv.appendChild(prodTitle);
+      const pDescr = document.createElement('p');
+      pDescr.innerText = description;
+      pDescr.classList.add('parStyle');
+      contentDiv.appendChild(pDescr);
+    });
+  });
+  productCard.addEventListener('mouseout', function () {
+    descrDiv.classList.remove('active');
+  });
 
   fragment.appendChild(productCard);
   ulHoney.appendChild(fragment);
 }
 
-
-
 // Import dropdwon
-import { dropdown, mobDropdwon} from './dropdown.js';
+import { dropdown, mobDropdwon } from './dropdown.js';
 dropdown();
 mobDropdwon();
-
 
 import { burgerAnimation, headerAnimation } from './burger.js';
 burgerAnimation();
